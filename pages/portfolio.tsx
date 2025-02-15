@@ -1,6 +1,7 @@
 import React from 'react';
 import { TamaguiProvider, Stack, Text, Button, XStack, YStack } from 'tamagui';
 import tamaguiConfig from '../tamagui.config';
+import ExperienceCard from '../components/experience';
 
 const Portfolio = () => {
   return (
@@ -27,14 +28,8 @@ const Portfolio = () => {
         {/* Experiencia */}
         <YStack p="$6">
           <Text fontSize="$8" fontWeight="bold">Experiencia</Text>
-          <YStack mt="$4">
-            <Text fontSize="$6" fontWeight="bold">Empresa X - SDET</Text>
-            <Text fontSize="$4">Automatización de pruebas, integración de CI/CD, uso de Selenium, Cypress, Playwright...</Text>
-          </YStack>
-          <YStack mt="$4">
-            <Text fontSize="$6" fontWeight="bold">Empresa Y - QA Engineer</Text>
-            <Text fontSize="$4">Diseño y ejecución de estrategias de testing, pruebas de API con Postman y Jest...</Text>
-          </YStack>
+          <ExperienceCard title="SDET" company="Empresa X" dates="2020 - Presente" description="Automatización de pruebas, integración de CI/CD, uso de Selenium, Cypress, Playwright..." />
+          <ExperienceCard title="QA Engineer" company="Empresa Y" dates="2018 - 2020" description="Diseño y ejecución de estrategias de testing, pruebas de API con Postman y Jest..." />
         </YStack>
 
         {/* Habilidades */}
