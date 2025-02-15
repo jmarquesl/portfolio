@@ -1,2 +1,3 @@
-# portfolio
-My Portfolio
+# Portfolio
+
+App made with React + Tamagui

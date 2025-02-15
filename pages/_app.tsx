@@ -3,6 +3,7 @@ import { TamaguiProvider, Stack, Theme } from 'tamagui';
 import { config } from '../tamagui.config';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

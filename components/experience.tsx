@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, Text } from "tamagui";
 
 const ExperienceCard = ({ title, company, dates, description }) => (

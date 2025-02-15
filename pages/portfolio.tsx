@@ -1,12 +1,10 @@
 import React from 'react';
 import { TamaguiProvider, Stack, Text, Button, XStack, YStack } from 'tamagui';
-import tamaguiConfig from '../tamagui.config';
 import ExperienceCard from '../components/experience';
 import experiences from '../data/experiences.json';
 
 const Portfolio = () => {
   return (
-    <TamaguiProvider config={tamaguiConfig} defaultTheme="myTheme">
       <Stack f={1} bg="$background" p="$4">
         
         {/* Header */}
@@ -66,7 +64,6 @@ const Portfolio = () => {
           <Text fontSize="$5" mt="$2">Puedes escribirme a: <Text fontWeight="bold">tucorreo@example.com</Text></Text>
         </YStack>
       </Stack>
-    </TamaguiProvider>
   );
 };
 
