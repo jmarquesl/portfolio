@@ -1,15 +1,15 @@
 import React from 'react';
-import { XStack, Text, Button } from 'tamagui';
+import {YStack, XStack, Text, Button } from 'tamagui';
 import Link from 'next/link';
 
 const Footer = () => (
-  <XStack p="$4" jc="space-between" ai="center" mt="$6">
-    <Text fontSize="$4">GNU GENERAL PUBLIC LICENSE Version 3</Text>
-    <XStack gap="$4">
-      <Link href="https://linkedin.com" passHref><Button>LinkedIn</Button></Link>
-      <Link href="https://github.com" passHref><Button>GitHub</Button></Link>
+  <YStack p="$4" ai="center" mt="$6" bg="$background" shadowColor="$shadowColor" shadowRadius="$2" shadowOffset={{ width: 0, height: 2 }}>
+    <XStack gap="$4" mt="$3">
+      <Text fontSize="$4" textAlign="center">GNU GENERAL PUBLIC LICENSE Version 3</Text>
+      <Link href="https://linkedin.com" passHref><Button size="$4" variant="outlined">LinkedIn</Button></Link>
+      <Link href="https://github.com" passHref><Button size="$4" variant="outlined">GitHub</Button></Link>
     </XStack>
-  </XStack>
+  </YStack>
 );
 
 export default Footer;
