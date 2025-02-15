@@ -2,10 +2,11 @@ import React from 'react';
 import { TamaguiProvider, Stack, Text, Button, XStack, YStack } from 'tamagui';
 import tamaguiConfig from '../tamagui.config';
 import ExperienceCard from '../components/experience';
+import experiences from '../data/experiences.json';
 
 const Portfolio = () => {
   return (
-    <TamaguiProvider config={tamaguiConfig}>
+    <TamaguiProvider config={tamaguiConfig} defaultTheme="myTheme">
       <Stack f={1} bg="$background" p="$4">
         
         {/* Header */}
@@ -28,8 +29,9 @@ const Portfolio = () => {
         {/* Experiencia */}
         <YStack p="$6">
           <Text fontSize="$8" fontWeight="bold">Experiencia</Text>
-          <ExperienceCard title="SDET" company="Empresa X" dates="2020 - Presente" description="Automatización de pruebas, integración de CI/CD, uso de Selenium, Cypress, Playwright..." />
-          <ExperienceCard title="QA Engineer" company="Empresa Y" dates="2018 - 2020" description="Diseño y ejecución de estrategias de testing, pruebas de API con Postman y Jest..." />
+          {experiences.map((exp, index) => (
+            <ExperienceCard key={index} title={exp.title} company={exp.company} dates={exp.dates} description={exp.description} />
+          ))}
         </YStack>
 
         {/* Habilidades */}
