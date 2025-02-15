@@ -3,16 +3,19 @@ import { TamaguiProvider, Stack } from 'tamagui';
 import tamaguiConfig from '../tamagui.config';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import { ThemeProvider } from '../context/ThemeProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TamaguiProvider config={tamaguiConfig}>
-      <Stack f={1} bg="$background">
+      <ThemeProvider>
+        <Stack f={1} bg="$background">
         <Header />
         <Component {...pageProps} />
-        <Footer />
+        <Footer />""
       </Stack>
-    </TamaguiProvider>
+    </ThemeProvider>
+    </TamaguiProvider >
   );
 }
 

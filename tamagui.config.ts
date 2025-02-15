@@ -1,5 +1,18 @@
-import { createTamagui } from '@tamagui/core'
-import { tokens, themes } from '@tamagui/themes'
+import { createTamagui, createTheme } from '@tamagui/core'
+import { tokens } from '@tamagui/themes'
+
+const themes = {
+    light: {
+      background: '#ffffff',
+      color: '#000000',
+      primary: '#6200ee',
+    },
+    dark: {
+      background: '#121212',
+      color: '#ffffff',
+      primary: '#bb86fc',
+    },
+  }
 
 const config = createTamagui({
   themes,
