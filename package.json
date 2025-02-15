@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tamagui/config": "^1.125.2",
     "@tamagui/core": "^1.125.2",
     "@tamagui/themes": "^1.125.2",
     "@tamagui/web": "^1.125.2",

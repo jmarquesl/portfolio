@@ -12,7 +12,7 @@ const Portfolio = () => {
         {/* Header */}
         <YStack ai="center" jc="center" py="$6">
           <Text fontSize="$10" fontWeight="bold">Tu Nombre</Text>
-          <Text fontSize="$6" color="$gray10">SDET | QA Automation | DevOps Enthusiast</Text>
+          <Text fontSize="$6" >SDET | QA Automation | DevOps Enthusiast</Text>
           <XStack gap="$4" mt="$4">
             <Button>LinkedIn</Button>
             <Button>GitHub</Button>
