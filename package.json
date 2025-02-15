@@ -1,8 +1,22 @@
 {
   "dependencies": {
+    "@tamagui/core": "^1.125.2",
+    "@tamagui/themes": "^1.125.2",
+    "@tamagui/web": "^1.125.2",
     "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tamagui": "^1.125.1"
+    "react-native-web": "^0.19.13",
+    "tamagui": "^1.125.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   }
 }
