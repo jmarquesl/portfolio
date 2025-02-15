@@ -1,16 +1,22 @@
 import React from 'react';
-import { XStack, Text, Button } from 'tamagui';
+import { XStack, YStack, Text, Button } from 'tamagui';
 import Link from 'next/link';
 
 const Header = () => (
-  <XStack p="$4" jc="space-between" ai="center">
-    <Text fontSize="$6" fontWeight="bold">Mi Portfolio</Text>
-    <XStack gap="$4">
-      <Link href="/" passHref><Button>Inicio</Button></Link>
-      <Link href="/portfolio" passHref><Button>Sobre Mí</Button></Link>
-      <Link href="/contact" passHref><Button>Contacto</Button></Link>
+  <YStack p="$4" ai="center" bg="$background" shadowColor="$shadowColor" shadowRadius="$2" shadowOffset={{ width: 0, height: 2 }}>
+    <XStack gap="$4" mt="$3">
+      <Text fontSize="$8" fontWeight="bold" textAlign="center">Mi Portfolio</Text>
+      <Link href="/" passHref>
+        <Button size="$4" fontWeight="bold" textDecorationLine="none">Inicio</Button>
+      </Link>
+      <Link href="/portfolio" passHref>
+        <Button size="$4" fontWeight="bold" textDecorationLine="none">Sobre Mí</Button>
+      </Link>
+      <Link href="/contact" passHref>
+        <Button size="$4" fontWeight="bold" textDecorationLine="none">Contacto</Button>
+      </Link>
     </XStack>
-  </XStack>
+  </YStack>
 );
 
 export default Header;
