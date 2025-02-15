@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Stack f={1} bg="$background">
         <Header />
         <Component {...pageProps} />
-        <Footer />""
+        <Footer />
       </Stack>
       </Theme>
     </TamaguiProvider >
