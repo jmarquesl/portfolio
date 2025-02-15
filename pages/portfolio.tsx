@@ -1,6 +1,6 @@
 import React from 'react';
 import { TamaguiProvider, Stack, Text, Button, XStack, YStack } from 'tamagui';
-import ExperienceCard from '../components/experience';
+import ExperienceCard from '../components/Experience';
 import experiences from '../data/experiences.json';
 
 const Portfolio = () => {
