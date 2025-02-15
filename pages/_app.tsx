@@ -1,13 +1,17 @@
-import type { AppProps } from 'next/app'
-import { TamaguiProvider } from '@tamagui/core'
-import tamaguiConfig from '../tamagui.config'
+import type { AppProps } from 'next/app';
+import { TamaguiProvider, Stack } from 'tamagui';
+import tamaguiConfig from '../tamagui.config';
+import Header from '../components/header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TamaguiProvider config={tamaguiConfig}>
-      <Component {...pageProps} />
+      <Stack f={1} bg="$background">
+        <Header /> {/* Header se renderiza en TODAS las páginas */}
+        <Component {...pageProps} />
+      </Stack>
     </TamaguiProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
