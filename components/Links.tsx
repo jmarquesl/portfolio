@@ -1,14 +1,17 @@
-import NavLink from "./NavLink"
-import React from 'react';
+import NavLink from "./NavLink";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Links = () => {
+    const { t, i18n } = useTranslation();
+
     return (
         <>
-            <NavLink href="/">Inicio</NavLink>
-            <NavLink href="/aboutMe">Sobre Mí</NavLink>
-            <NavLink href="/contact">Contacto</NavLink>
+            <NavLink href="/">{t("home")}</NavLink>
+            <NavLink href="/aboutMe">{t("about_me")}</NavLink>
+            <NavLink href="/contact">{t("contact")}</NavLink>
         </>
     );
-}
+};
 
 export default Links;
