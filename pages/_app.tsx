@@ -7,6 +7,7 @@ import React from 'react';
 import { LinearGradient } from 'tamagui/linear-gradient';
 import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider';
 import { useRouter } from 'next/router';
+import "../i18n"; 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

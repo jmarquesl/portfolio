@@ -4,10 +4,12 @@
     "@tamagui/core": "^1.125.2",
     "@tamagui/themes": "^1.125.2",
     "@tamagui/web": "^1.125.2",
+    "i18next": "^24.2.2",
     "lucide-react": "^0.475.0",
     "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.0",
     "react-native-web": "^0.19.13",
     "tamagui": "^1.125.2"
   },
