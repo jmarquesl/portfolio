@@ -22,7 +22,7 @@ const ExperienceSection = () => {
     useEffect(() => {
         const loadExperiences = async () => {
             const locale = i18n.language;
-            const response = await fetch(`/data/${locale}/experiences.json`);
+            const response = await fetch(`/portfolio/data/${locale}/experiences.json`);
             const data = await response.json();
             setExperiences(data);
             setIsExperiencesLoading(false);

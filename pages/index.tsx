@@ -9,7 +9,7 @@ export default function HomePage() {
       <YStack maxWidth="90%" p="$4">
         <XStack gap="$4" ai="center">
           <Avatar circular size="$10">
-            <Avatar.Image src="/static/images/profile.jpg" />
+            <Avatar.Image src="/portfolio/static/images/profile.jpg" />
             <Avatar.Fallback backgroundColor="$backgroundFocus" />
           </Avatar>
           <YStack marginLeft="$6" maxWidth="80%" flexWrap="wrap" jc="center">

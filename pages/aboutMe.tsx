@@ -9,21 +9,6 @@ import ExperienceSection from '../components/ExperienceSection';
 const AboutMePage = () => {
   const { t, i18n } = useTranslation();
 
-  const [experiences, setExperiences] = useState([]);
-  const [isExperiencesLoading, setIsExperiencesLoading] = useState(true);
-
-  useEffect(() => {
-    const loadExperiences = async () => {
-      const locale = i18n.language;
-      const response = await fetch(`/data/${locale}/experiences.json`);
-      const data = await response.json();
-      setExperiences(data);
-      setIsExperiencesLoading(false);
-    };
-    loadExperiences();
-  }, [i18n.language]);
-
-
   return (
     <YStack f={1} bg="transparent" p="$4">
       {/* Header */}

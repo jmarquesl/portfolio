@@ -8,7 +8,7 @@ export default function ContactPage() {
         <YStack alignItems="center">
             <XStack f={1} ai="center" jc="center" gap="$4" p="$6" alignItems="center">
                 <Avatar circular size="$15">
-                    <Avatar.Image src="/static/images/contact.jpg" />
+                    <Avatar.Image src="/portfolio/static/images/contact.jpg" />
                     <Avatar.Fallback bc="$gray7" />
                 </Avatar>
 
