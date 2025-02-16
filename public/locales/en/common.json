@@ -11,5 +11,6 @@
   "contact": "Contact",
   "experience": "Experience",
   "skills": "Skills",
-  "projects": "Projects"
+  "projects": "Projects",
+  "presentation": "Hello! My name is Jordi Marqués Llaberia, and I am a QA Engineer with extensive experience in software quality assurance, test automation, and Agile methodologies. I have worked with companies such as Vibia, Scopely, SEAT CODE or Glovo, ensuring high-quality software and optimizing testing processes.\n\nMy expertise includes:\n- Test automation with Playwright, Cucumber, and Jenkins.\n- Agile and Extreme Programming (XP) environments.\n- API and mobile testing.\n- Continuous Integration and bug tracking with JIRA and Xray.\n\nI am passionate about improving testing strategies and automation techniques to deliver high-quality software. Feel free to reach out to discuss QA, automation, or best testing practices!"
 }

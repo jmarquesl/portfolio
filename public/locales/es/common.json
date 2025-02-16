@@ -11,5 +11,7 @@
   "about_me": "Sobre Mí",
   "experience": "Experiencia",
   "skills": "Habilidades",
-  "projects": "Proyectos"
+  "projects": "Proyectos",
+  "presentation": "¡Hola! Mi nombre es Jordi Marqués Llaberia y soy Ingeniero de QA con experiencia en aseguramiento de calidad del software, automatización de pruebas y metodologías ágiles. He trabajado en empresas como Vibia, Scopely, SEAT CODE o Glovo, asegurando software de alta calidad y optimizando procesos de prueba.\n\nMis competencias incluyen:\n- Automatización de pruebas con Playwright, Cucumber y Jenkins.\n- Entornos ágiles y de Programación Extrema (XP).\n- Pruebas de API y móviles.\n- Integración continua y seguimiento de errores con JIRA y Xray.\n\nMe apasiona mejorar estrategias de prueba y automatización para ofrecer software de alta calidad. ¡Contáctame si quieres hablar sobre QA, automatización o mejores prácticas de prueba!"
+
 }
