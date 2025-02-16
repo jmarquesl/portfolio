@@ -10,9 +10,6 @@ function Header() {
     <YStack
       p="$4"
       bg="transparent"
-      shadowColor="$shadowColor"
-      shadowRadius="$2"
-      shadowOffset={{ width: 0, height: 2 }}
     >
       <XStack
         gap="$6"
