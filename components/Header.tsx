@@ -12,7 +12,7 @@ const Header = () => (
     shadowRadius="$2"
     shadowOffset={{ width: 0, height: 2 }}
   >
-    <XStack gap="$4" mt="$3" ai="center">
+    <XStack gap="$6" mt="$3" ai="center">
       <ThemeSwitch />
       <Text fontSize="$8" fontWeight="bold" textAlign="center">
         Mi Portfolio
