@@ -32,7 +32,7 @@ function Header() {
           {useMedia().sm ? (
             <Links />
           ) : (
-            <HamburgerMenu ml="auto" /> // Empuja el menú hacia la derecha
+            <HamburgerMenu/>
           )}
         </XStack>
       </XStack>
