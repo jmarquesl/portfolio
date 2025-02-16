@@ -5,27 +5,39 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import React from 'react';
 import { LinearGradient } from 'tamagui/linear-gradient';
+import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider'; 
+import router from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TamaguiProvider config={config}>
-      <Theme name="dark">
-        <LinearGradient
-          width="100%"
-          height="100vh"
-          colors={['$backgroundFocus', '$background']}
-          start={[0, 1]}
-          end={[0, 0]}
-          style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
-        />
-        <Stack f={1} bg="transparent">
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </Stack>
-      </Theme>
-    </TamaguiProvider >
+      <ThemeProvider>
+        <AppContent Component={Component} pageProps={pageProps} router={router} />
+      </ThemeProvider>
+    </TamaguiProvider>
   );
 }
+
+const AppContent = ({ Component, pageProps, router }: AppProps) => {
+  const { theme } = useThemeSetting(); // Ahora useThemeSetting() se usa dentro de ThemeProvider
+
+  return (
+    <Theme name={theme}>
+      <LinearGradient
+        width="100%"
+        height="100vh"
+        colors={['$backgroundFocus', '$background']}
+        start={[0, 1]}
+        end={[0, 0]}
+        style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
+      />
+      <Stack f={1} bg="transparent">
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </Stack>
+    </Theme>
+  );
+};
 
 export default MyApp;
