@@ -1,40 +1,40 @@
 [
   {
-    "area": "Testing",
+    "area": "Automation",
     "skills": [
-      "Mobile test automation with Appium with Serenity",
-      "API test automation with Karate, Rest Assured, Pytest and Postman",
-      "Web test automation with Cypress and Selenium",
-      "API documentation with Swagger/OAS3"
+      "Automatización de pruebas móviles con Appium y Serenity",
+      "Automatización de pruebas API con Karate, Rest Assured, Pytest y Postman",
+      "Automatización de pruebas web con Cypress y Selenium",
+      "Documentación de API con Swagger/OAS3"
     ]
   },
   {
-    "area": "Coding",
+    "area": "Programación",
     "skills": [
-      "Python: Scripting and testing knowledge",
-      "Javascript: Scripting and testing knowledge",
-      "Java: Medium knowledge. Able to implement test frameworks",
-      "Kotlin: Medium knowledge. Able to implement test frameworks",
-      "SQL: Able to create queries to check data for testing purposes"
+      "Python: Conocimientos en scripting y pruebas",
+      "Javascript: Conocimientos en scripting y pruebas",
+      "Java: Conocimiento medio. Capaz de implementar marcos de pruebas",
+      "Kotlin: Conocimiento medio. Capaz de implementar marcos de pruebas",
+      "SQL: Capaz de crear consultas para verificar datos con fines de prueba"
     ]
   },
   {
-    "area": "CI",
+    "area": "Integración Continua (CI)",
     "skills": [
       "Github Actions",
-      "Jenkins CI: Creation of pipelines with groovy and Job DSL"
+      "Jenkins CI: Creación de pipelines con Groovy y Job DSL"
     ]
   },
   {
-    "area": "Version Control",
+    "area": "Control de Versiones",
     "skills": [
-      "Git w/ Github, through git CLI and git clients like Sourcetree"
+      "Git con Github, utilizando CLI de Git y clientes como Sourcetree"
     ]
   },
   {
-    "area": "Methodologies",
+    "area": "Metodologías",
     "skills": [
-      "Worked with Agile methodologies since 2016"
+      "Experiencia trabajando con metodologías ágiles desde 2016"
     ]
   }
 ]
