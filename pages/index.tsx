@@ -4,16 +4,16 @@ import { useTranslation } from "react-i18next";
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   return (
-    <YStack f={1} ai="center" w="100%" p="$4" gap="$6" alignItems="center">
+    <YStack ai="center" w="100%" p="$4" alignItems="center">
       {/* Sección de presentación */}
-      <YStack maxWidth="90%" p="$4">
+      <YStack maxWidth="100%" p="$4">
         <XStack gap="$4" ai="center">
           <Avatar circular size="$10">
             <Avatar.Image src="/portfolio/static/images/profile.jpg" />
             <Avatar.Fallback backgroundColor="$backgroundFocus" />
           </Avatar>
-          <YStack marginLeft="$6" maxWidth="80%" flexWrap="wrap" jc="center">
-            <Text fontSize="$10" fontWeight="bold" wordWrap="break-word">
+            <YStack marginLeft="$6" maxWidth="80%" flexWrap="wrap" jc="center" alignItems="center" flexDirection="column">
+            <Text fontSize="$6" fontWeight="bold" wordWrap="break-word">
               {t("name")}
             </Text>
             <Text fontSize="$6">{t("role")}</Text>
@@ -22,7 +22,7 @@ export default function HomePage() {
       </YStack>
 
       {/* Texto de presentación */}
-      <YStack w="90%" maxWidth={700} p="$4">
+      <YStack w="100%" maxWidth={700} p="$4" alignItems="center">
         <Text fontSize="$8" fontWeight="bold" textAlign="center">
           {t("intro")}
         </Text>
