@@ -29,7 +29,7 @@ const AboutMePage = () => {
       <YStack p="$6" gap="$4">
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">
-            Soy un ingeniero en QA y desarrollo especializado en pruebas automatizadas, CI/CD y mejora de calidad en entornos DevOps...
+           {t("presentation")}
           </Text>
         </Section>
 
