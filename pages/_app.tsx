@@ -11,8 +11,7 @@ import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TamaguiProvider config={config}>
-      <ThemeProvider>
-        <AppContent Component={Component} pageProps={pageProps} />
+      <ThemeProvider children={<AppContent Component={Component} pageProps={pageProps} />}>
       </ThemeProvider>
     </TamaguiProvider>
   );
