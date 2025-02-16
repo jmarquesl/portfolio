@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
 import ExperienceCard from '../components/Experience';
 import experiences from '../data/experiences.json';
@@ -7,6 +7,21 @@ import { useTranslation } from 'react-i18next';
 
 const AboutMePage = () => {
   const { t, i18n } = useTranslation();
+
+  const [experiences, setExperiences] = useState([]);
+  const [isExperiencesLoading, setIsExperiencesLoading] = useState(true);
+
+  useEffect(() => {
+    const loadExperiences = async () => {
+      const locale = i18n.language;
+      const response = await fetch(`/data/${locale}/experiences.json`);
+      const data = await response.json();
+      setExperiences(data);
+      setIsExperiencesLoading(false);
+    };
+    loadExperiences();
+  }, [i18n.language]);
+
   return (
     <YStack f={1} bg="transparent" p="$4">
 
@@ -19,9 +34,17 @@ const AboutMePage = () => {
         </Section>
 
         <Section title={t("experience")}>
-          {experiences.map((exp) => (
-            <ExperienceCard key={exp.title} title={exp.title} company={exp.company} dates={exp.dates} description={exp.description} />
-          ))}
+          {isExperiencesLoading ? (<Text>TuPUtaMadre</Text> ) : (experiences.map((exp) => (
+              <ExperienceCard
+                key={exp.title}
+                title={exp.title}
+                company={exp.company}
+                dates={exp.dates}
+                description={exp.description}
+                logo={exp.logo}
+                skills={exp.skills}
+              />
+            )))}
         </Section>
 
         <Section title={t("skills")}>
@@ -30,19 +53,6 @@ const AboutMePage = () => {
               <Button key={skill}>{skill}</Button>
             ))}
           </XStack>
-        </Section>
-
-        <Section title={t("projects")}>
-          <YStack pl="$4">
-            <YStack mt="$4">
-              <Text fontSize="$6" fontWeight="bold">Automated Test Framework</Text>
-              <Text fontSize="$4">Desarrollo de un framework de pruebas en Selenium + Java...</Text>
-            </YStack>
-            <YStack mt="$4">
-              <Text fontSize="$6" fontWeight="bold">CI/CD Testing Pipeline</Text>
-              <Text fontSize="$4">Integración de pruebas automatizadas en GitHub Actions...</Text>
-            </YStack>
-          </YStack>
         </Section>
       </YStack>
     </YStack>
