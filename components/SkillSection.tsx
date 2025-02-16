@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import SkillCard from "./SkillsCard";
-import i18n from "../i18n";
 import { YStack } from "tamagui";
+import { getLanguage } from "next-i18next-static-site";
 
 const SkillSection: React.FC = () => {
     const [skills, setSkills] = useState([]);
     const [isSkillsLoading, setIsSkillsLoading] = useState(true);
     useEffect(() => {
         const loadSkills = async () => {
-            const locale = i18n.language;
+            const locale = getLanguage;
             const response = await fetch(`/data/${locale}/skills.json`);
             const data = await response.json();
             setSkills(data);
             setIsSkillsLoading(false);
         };
         loadSkills();
-    }, [i18n.language]);
+    }, [getLanguage]);
     return (
         <YStack>
             {isSkillsLoading ? <></> : (skills.map((skill: any) => (
