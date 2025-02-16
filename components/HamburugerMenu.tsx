@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Popover, Text, YStack } from 'tamagui';
-import NavLink from './NavLink';
 import { Menu } from 'lucide-react'
+import Links from './Links';
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +23,7 @@ export default function HamburgerMenu() {
       </Popover.Trigger>
       <Popover.Content padding="$4" backgroundColor="$background" borderRadius="$4" onClick={handleClose}>
         <YStack space="$3">
-          <NavLink href="/" onClick={handleClose}>Inicio</NavLink>
-          <NavLink href="/portfolio" onClick={handleClose}>Sobre Mí</NavLink>
-          <NavLink href="/contact" onClick={handleClose}>Contacto</NavLink>
+          <Links/>
         </YStack>
       </Popover.Content>
     </Popover>
