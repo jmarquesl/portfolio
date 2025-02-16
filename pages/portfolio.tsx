@@ -1,5 +1,5 @@
 import React from 'react';
-import { TamaguiProvider, Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
+import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
 import ExperienceCard from '../components/Experience';
 import experiences from '../data/experiences.json';
 
