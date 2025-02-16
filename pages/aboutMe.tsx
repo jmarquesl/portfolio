@@ -3,26 +3,28 @@ import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
 import ExperienceCard from '../components/Experience';
 import experiences from '../data/experiences.json';
 import { Section } from '../components/Section';
+import { useTranslation } from 'react-i18next';
 
-const Portfolio = () => {
+const AboutMePage = () => {
+  const { t, i18n } = useTranslation();
   return (
     <YStack f={1} bg="transparent" p="$4">
 
       {/* Header */}
       <YStack p="$6" gap="$4">
-        <Section title="Sobre Mí">
+        <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">
             Soy un ingeniero en QA y desarrollo especializado en pruebas automatizadas, CI/CD y mejora de calidad en entornos DevOps...
           </Text>
         </Section>
 
-        <Section title="Experiencia">
+        <Section title={t("experience")}>
           {experiences.map((exp) => (
             <ExperienceCard key={exp.title} title={exp.title} company={exp.company} dates={exp.dates} description={exp.description} />
           ))}
         </Section>
 
-        <Section title="Habilidades">
+        <Section title={t("skills")}>
           <XStack pl="$4" flexWrap="wrap" gap="$2" mt="$4">
             {["Selenium", "Cypress", "Playwright", "Jenkins", "Docker", "Kubernetes"].map(skill => (
               <Button key={skill}>{skill}</Button>
@@ -30,7 +32,7 @@ const Portfolio = () => {
           </XStack>
         </Section>
 
-        <Section title="Proyectos">
+        <Section title={t("projects")}>
           <YStack pl="$4">
             <YStack mt="$4">
               <Text fontSize="$6" fontWeight="bold">Automated Test Framework</Text>
@@ -47,4 +49,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default AboutMePage;

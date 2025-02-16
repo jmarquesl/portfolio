@@ -1,7 +1,7 @@
 import { Button, YStack, Text, Avatar, XStack } from "tamagui";
 import { useTranslation } from "react-i18next";
 
-export default function Home() {
+export default function HomePage() {
   const { t, i18n } = useTranslation();
   return (
     <YStack f={1} ai="center" w="100%" p="$4" gap="$6" alignItems="center">
