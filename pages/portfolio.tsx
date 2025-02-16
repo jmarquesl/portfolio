@@ -8,8 +8,8 @@ const Portfolio = () => {
     <Stack f={1} bg="transparent" p="$4">
 
       {/* Header */}
-      <YStack ai="center" jc="center" py="$6">
-        <XStack gap="$4" ai="center" jc="center" pb="$4">
+      <YStack ai="center" jc="center" py="$6" p="$6" alignItems="center">
+        <XStack gap="$4" ai="center" jc="center" pb="$4" alignItems="center">
           <Avatar circular size="$10">
             <Avatar.Image
               accessibilityLabel="Cam"
