@@ -41,7 +41,7 @@ const Portfolio = () => {
         {/* Habilidades */}
         <YStack>
           <Text fontSize="$8" fontWeight="bold">Habilidades</Text>
-          <XStack flexWrap="wrap" gap="$2" mt="$4">
+          <XStack pl="$4" flexWrap="wrap" gap="$2" mt="$4">
             <Button>Selenium</Button>
             <Button>Cypress</Button>
             <Button>Playwright</Button>
@@ -54,6 +54,7 @@ const Portfolio = () => {
         {/* Proyectos */}
         <YStack>
           <Text fontSize="$8" fontWeight="bold">Proyectos</Text>
+          <YStack pl="$4">
           <YStack mt="$4">
             <Text fontSize="$6" fontWeight="bold">Automated Test Framework</Text>
             <Text fontSize="$4">Desarrollo de un framework de pruebas en Selenium + Java...</Text>
@@ -62,12 +63,7 @@ const Portfolio = () => {
             <Text fontSize="$6" fontWeight="bold">CI/CD Testing Pipeline</Text>
             <Text fontSize="$4">Integración de pruebas automatizadas en GitHub Actions...</Text>
           </YStack>
-        </YStack>
-
-        {/* Contacto */}
-        <YStack ai="center">
-          <Text fontSize="$8" fontWeight="bold">Contacto</Text>
-          <Text fontSize="$5" mt="$2">Puedes escribirme a: <Text fontWeight="bold">tucorreo@example.com</Text></Text>
+          </YStack>
         </YStack>
       </YStack>
     </YStack>
