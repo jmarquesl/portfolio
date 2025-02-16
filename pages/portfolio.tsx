@@ -20,11 +20,6 @@ const Portfolio = () => {
             <Text fontSize="$10" fontWeight="bold">Jordi Marqués Llaberia</Text>
         </XStack>
         <Text fontSize="$6" >SDET | QA Automation | DevOps Enthusiast</Text>
-        <XStack gap="$4" mt="$4">
-          <Button>LinkedIn</Button>
-          <Button>GitHub</Button>
-          <Button>Email</Button>
-        </XStack>
       </YStack>
 
       {/* Acerca de mí */}
