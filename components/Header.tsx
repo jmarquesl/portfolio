@@ -21,10 +21,11 @@ function Header() {
         width="100%"  
         maxWidth="1200px" 
         mx="auto"
+        alignItems="center"
       >
         <ThemeSwitch />
         
-        <Text fontSize="$8" fontWeight="bold" textAlign="center" ai="center" flex={1}>
+        <Text fontSize="$8" fontWeight="bold" textAlign="center" ai="center" jc="center" flex={1}>
           Mi Portfolio
         </Text>
 
