@@ -2,7 +2,7 @@ import React from "react";
 import { XStack, YStack, Text, useMedia } from "tamagui";
 import ThemeSwitch from "./ThemeSwitch";
 import NavLink from "./NavLink";
-import HamburgerMenu from "./HamburugerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 import Links from "./Links";
 
 function Header() {

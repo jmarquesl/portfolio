@@ -9,21 +9,6 @@ const Portfolio = () => {
     <YStack f={1} bg="transparent" p="$4">
 
       {/* Header */}
-      <YStack ai="center" jc="center" pt="$4" pb="$4" alignItems="center">
-        <XStack gap="$4" ai="center" jc="center" alignItems="center">
-          <Avatar circular size="$10">
-            <Avatar.Image
-              src="/static/images/profile.jpg"
-            />
-            <Avatar.Fallback backgroundColor="$backgroundFocus" />
-          </Avatar>
-          <YStack marginLeft="&6" maxWidth="100%" flexWrap="wrap" jc="center">
-            <Text fontSize="$10" fontWeight="bold" wordWrap="break-word" whiteSpace="pre-wrap">Jordi Marqués Llaberia</Text>
-            <Text fontSize="$6">QA and Agile Enthusiast</Text>
-          </YStack>
-        </XStack>
-      </YStack>
-
       <YStack p="$6" gap="$4">
         <Section title="Sobre Mí">
           <Text fontSize="$5" mt="$2" pl="$4">
