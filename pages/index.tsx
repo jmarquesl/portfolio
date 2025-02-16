@@ -1,17 +1,19 @@
-import { Button, YStack, Text, Avatar, XStack } from 'tamagui';
+import { Button, YStack, Text, Avatar, XStack, Stack } from 'tamagui';
 import React from 'react';
 
 export default function Home() {
   return (
-    <YStack f={1} ai="center" w="100%" p="$4" gap="$6">
+    <YStack f={1} ai="center" w="100%" p="$4" gap="$6" alignItems="center">
 
       {/* Sección de presentación */}
       <YStack maxWidth="90%%" p="$4">
         <XStack gap="$4" ai="center">
-          <Avatar circular size="$10">
+          <XStack alignItems="center">
+          <Avatar circular size="$10" alignItem="cen">
             <Avatar.Image src="/static/images/profile.jpg" />
             <Avatar.Fallback backgroundColor="$backgroundFocus" />
           </Avatar>
+          </XStack>
           <YStack marginLeft="&6" maxWidth="80%" flexWrap="wrap" jc="center">
             <Text fontSize="$10" fontWeight="bold" wordWrap="break-word">Jordi Marqués Llaberia</Text>
             <Text fontSize="$6">QA and Agile Enthusiast</Text>
