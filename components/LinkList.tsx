@@ -2,7 +2,7 @@ import NavLink from "./NavLink";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Links = () => {
+const LinkList = () => {
     const { t, i18n } = useTranslation();
 
     return (
@@ -14,4 +14,4 @@ const Links = () => {
     );
 };
 
-export default Links;
+export default LinkList;

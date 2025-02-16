@@ -3,7 +3,7 @@ import { XStack, YStack, Text, useMedia } from "tamagui";
 import ThemeSwitch from "./ThemeSwitch";
 import NavLink from "./NavLink";
 import HamburgerMenu from "./HamburgerMenu";
-import Links from "./Links";
+import LinkList from "./LinkList";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
@@ -32,7 +32,7 @@ function Header() {
         <LanguageSwitcher />
         <XStack gap="$4" ml="auto">
           {useMedia().sm ? (
-            <Links />
+            <LinkList />
           ) : (
             <HamburgerMenu/>
           )}

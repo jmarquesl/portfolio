@@ -1,14 +1,15 @@
-import React from "react";
+import React, { HTMLAttributeAnchorTarget } from "react";
 import { Text, Stack } from "tamagui";
 import Link from "next/link";
 
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
-  <Link href={href} passHref legacyBehavior>
+const NavLink: React.FC<NavLinkProps> = ({ href, children, target }) => (
+  <Link href={href} passHref legacyBehavior target={target}>
     <Stack
       as="a"
       px="$3"

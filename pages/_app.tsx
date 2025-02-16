@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { TamaguiProvider, Stack, Theme, Spacer } from 'tamagui';
+import { TamaguiProvider, Stack, Theme, Spacer, YStack } from 'tamagui';
 import { config } from '../tamagui.config';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -36,10 +36,13 @@ const AppContent = ({ Component, pageProps }: AppContentProps) => {
         style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
       />
       <Stack f={1} bg="transparent">
+      <YStack minHeight="100vh" jc="space-between"> {/* Estructura que empuja el footer */}
+        <YStack flex={1} paddingTop="80px">
         <Header />
-        <Spacer height={60} />
         <Component {...pageProps} />
+        </YStack>
         <Footer />
+        </YStack>
       </Stack>
     </Theme>
   );
