@@ -7,7 +7,9 @@ export default function HamburgerMenu() {
   return (
     <Popover>
       <Popover.Trigger>
-        <Button icon={Menu}/>
+        <Button>
+          <Menu size="24" />
+        </Button>
       </Popover.Trigger>
       <Popover.Content padding="$4" backgroundColor="$background" borderRadius="$4">
         <YStack space="$3">
