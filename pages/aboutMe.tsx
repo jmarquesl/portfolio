@@ -34,7 +34,7 @@ const AboutMePage = () => {
         </Section>
 
         <Section title={t("experience")}>
-          {isExperiencesLoading ? (<Text>TuPUtaMadre</Text> ) : (experiences.map((exp) => (
+          {isExperiencesLoading ? <></>: (experiences.map((exp) => (
               <ExperienceCard
                 key={exp.title}
                 title={exp.title}
