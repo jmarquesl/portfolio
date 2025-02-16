@@ -1,0 +1,40 @@
+[
+  {
+    "area": "Testing",
+    "skills": [
+      "Mobile test automation with Appium with Serenity",
+      "API test automation with Karate, Rest Assured, Pytest and Postman",
+      "Web test automation with Cypress and Selenium",
+      "API documentation with Swagger/OAS3"
+    ]
+  },
+  {
+    "area": "Coding",
+    "skills": [
+      "Python: Scripting and testing knowledge",
+      "Javascript: Scripting and testing knowledge",
+      "Java: Medium knowledge. Able to implement test frameworks",
+      "Kotlin: Medium knowledge. Able to implement test frameworks",
+      "SQL: Able to create queries to check data for testing purposes"
+    ]
+  },
+  {
+    "area": "CI",
+    "skills": [
+      "Github Actions",
+      "Jenkins CI: Creation of pipelines with groovy and Job DSL"
+    ]
+  },
+  {
+    "area": "Version Control",
+    "skills": [
+      "Git w/ Github, through git CLI and git clients like Sourcetree"
+    ]
+  },
+  {
+    "area": "Methodologies",
+    "skills": [
+      "Worked with Agile methodologies since 2016"
+    ]
+  }
+]

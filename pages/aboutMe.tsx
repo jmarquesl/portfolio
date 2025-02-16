@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
 import ExperienceCard from '../components/Experience';
-import experiences from '../data/experiences.json';
 import { Section } from '../components/Section';
 import { useTranslation } from 'react-i18next';
+import SkillSection from '../components/SkillSection';
 
 const AboutMePage = () => {
   const { t, i18n } = useTranslation();
@@ -22,9 +22,9 @@ const AboutMePage = () => {
     loadExperiences();
   }, [i18n.language]);
 
+
   return (
     <YStack f={1} bg="transparent" p="$4">
-
       {/* Header */}
       <YStack p="$6" gap="$4">
         <Section title={t("about_me")}>
@@ -49,15 +49,11 @@ const AboutMePage = () => {
         </Section>
 
         <Section title={t("skills")}>
-          <XStack pl="$4" flexWrap="wrap" gap="$2" mt="$4">
-            {["Selenium", "Cypress", "Playwright", "Jenkins", "Docker", "Kubernetes"].map(skill => (
-              <Button key={skill}>{skill}</Button>
-            ))}
-          </XStack>
+          <SkillSection/>
         </Section>
       </YStack>
     </YStack>
-  );
-};
+  )
+}
 
 export default AboutMePage;
