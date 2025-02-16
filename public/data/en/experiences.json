@@ -6,7 +6,8 @@
     "location": "Gavà, Catalonia, Spain",
     "description": "As part of the QA team in an Xtreme Programming (XP) environment, my primary goal is to promote quality from the initial stages of user story planning to production deployment.\n\nKey responsibilities include:\n- Driving quality from the start by ensuring processes align with high-quality standards.\n- Engaging in continuous pair programming with developers.\n- Building an automated testing platform using Playwright and Cucumber, integrated with Jira through Xray.\n\nI am committed to technical excellence and innovation in QA.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
-    "logo": "/static/images/vibia.png"
+    "logo": "/static/images/vibia.png",
+    "icon": "lightbulb"
   },
   {
     "title": "QA Engineer",
@@ -15,7 +16,8 @@
     "location": "Barcelona, Catalonia, Spain",
     "description": "Contributed to software quality assurance and automation testing in Agile development environments.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
-    "logo": "/static/images/innoit.png"
+    "logo": "/static/images/innoit.png",
+    "icon": "brain-circuit"
   },
   {
     "title": "QA Automation Engineer",
@@ -24,7 +26,9 @@
     "location": "Barcelona, Spain",
     "description": "Focused on automated testing, black-box testing, and mobile testing for gaming applications.",
     "skills": ["Bug Tracking", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "JIRA", "Communication"],
-    "logo": "/static/images/scopely.png"
+    "logo": "/static/images/scopely.png",
+    "icon": "gamepad-2"
+
   },
   {
     "title": "Quality Assurance",
@@ -33,7 +37,8 @@
     "location": "Barcelona, Spain",
     "description": "Worked on API testing, mobile testing, and quality assurance automation.",
     "skills": ["Bug Tracking", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Black Box Testing", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
-    "logo": "/static/images/seatcode.png"
+    "logo": "/static/images/seatcode.png",
+    "icon": "car"
   },
   {
     "title": "Software Engineer In Test",
@@ -42,7 +47,8 @@
     "location": "Barcelona, Spain",
     "description": "Developed automated testing frameworks and enhanced testing strategies for Glovo's platform.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
-    "logo": "/static/images/glovo.png"
+    "logo": "/static/images/glovo.png",
+    "icon": "bike"
   },
   {
     "title": "QA",
@@ -51,7 +57,8 @@
     "location": "L'Hospitalet de Llobregat, Spain",
     "description": "QA and Support for Unnax's financial technology solutions.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "API Testing", "JIRA", "Communication"],
-    "logo": "/static/images/unnax.png"
+    "logo": "/static/images/unnax.png",
+    "icon": "landmark"
   },
   {
     "title": "Tech Intern",
@@ -60,6 +67,7 @@
     "location": "L'Hospitalet de Llobregat, Spain",
     "description": "Testing and QA for Turijobs' job platform.",
     "skills": ["Bug Tracking", "Quality Assurance", "Black Box Testing", "Communication"],
-    "logo": "/static/images/turijobs.png"
+    "logo": "/static/images/turijobs.png",
+    "icon": "tent-tree"
   }
 ]

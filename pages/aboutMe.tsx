@@ -43,6 +43,7 @@ const AboutMePage = () => {
                 description={exp.description}
                 logo={exp.logo}
                 skills={exp.skills}
+                icon={exp.icon}
               />
             )))}
         </Section>

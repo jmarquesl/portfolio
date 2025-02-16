@@ -6,7 +6,8 @@
     "location": "Gavà, Cataluña, España",
     "description": "Como parte del equipo de QA en un entorno de Programación Extrema (XP), mi principal objetivo es promover la calidad desde las etapas iniciales de la planificación de historias de usuario hasta el despliegue en producción.\n\nResponsabilidades clave incluyen:\n- Impulsar la calidad desde el principio asegurando que los procesos se alineen con altos estándares de calidad.\n- Participar en programación en pareja continua con desarrolladores.\n- Construir una plataforma de pruebas automatizadas utilizando Playwright y Cucumber, integrada con Jira a través de Xray.\n\nEstoy comprometido con la excelencia técnica y la innovación en QA.",
     "skills": ["Seguimiento de errores", "Integración continua", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Programación", "JIRA", "JavaScript", "Comunicación"],
-    "logo": "/static/images/vibia.png"
+    "logo": "/static/images/vibia.png",
+    "icon": "lightbulb"
   },
   {
     "title": "Ingeniero de QA",
@@ -15,7 +16,8 @@
     "location": "Barcelona, Cataluña, España",
     "description": "Contribuí a la garantía de calidad del software y a la automatización de pruebas en entornos de desarrollo ágil.",
     "skills": ["Seguimiento de errores", "Integración continua", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Programación", "JIRA", "JavaScript", "Comunicación"],
-    "logo": "/static/images/innoit.png"
+    "logo": "/static/images/innoit.png",
+    "icon": "brain-circuit"
   },
   {
     "title": "Ingeniero de Automatización QA",
@@ -24,7 +26,8 @@
     "location": "Barcelona, España",
     "description": "Enfoque en pruebas automatizadas, pruebas de caja negra y pruebas móviles para aplicaciones de juegos.",
     "skills": ["Seguimiento de errores", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Jenkins", "Pruebas móviles", "Programación", "JIRA", "Comunicación"],
-    "logo": "/static/images/scopely.png"
+    "logo": "/static/images/scopely.png",
+    "icon": "gamepad-2"
   },
   {
     "title": "Aseguramiento de Calidad",
@@ -33,7 +36,9 @@
     "location": "Barcelona, España",
     "description": "Trabajé en pruebas de API, pruebas móviles y automatización de aseguramiento de calidad.",
     "skills": ["Seguimiento de errores", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Pruebas de caja negra", "Pruebas móviles", "Programación", "Pruebas de API", "JIRA", "JavaScript", "Comunicación"],
-    "logo": "/static/images/seatcode.png"
+    "logo": "/static/images/seatcode.png",
+    "icon": "car"
+
   },
   {
     "title": "Ingeniero de Software en Pruebas",
@@ -42,7 +47,8 @@
     "location": "Barcelona, España",
     "description": "Desarrollé marcos de prueba automatizados y mejoré estrategias de prueba para la plataforma de Glovo.",
     "skills": ["Seguimiento de errores", "Python", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Jenkins", "Pruebas móviles", "Programación", "Pruebas de API", "JIRA", "JavaScript", "Comunicación"],
-    "logo": "/static/images/glovo.png"
+    "logo": "/static/images/glovo.png",
+    "icon": "bike"
   },
   {
     "title": "QA",
@@ -51,7 +57,8 @@
     "location": "L'Hospitalet de Llobregat, España",
     "description": "QA y soporte para las soluciones de tecnología financiera de Unnax.",
     "skills": ["Seguimiento de errores", "Python", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Pruebas de API", "JIRA", "Comunicación"],
-    "logo": "/static/images/unnax.png"
+    "logo": "/static/images/unnax.png",
+    "icon": "landmark"
   },
   {
     "title": "Prácticas Tecnológicas",
@@ -60,6 +67,7 @@
     "location": "L'Hospitalet de Llobregat, España",
     "description": "Pruebas y aseguramiento de calidad para la plataforma de empleo de Turijobs.",
     "skills": ["Seguimiento de errores", "Aseguramiento de calidad", "Pruebas de caja negra", "Comunicación"],
-    "logo": "/static/images/turijobs.png"
+    "logo": "/static/images/turijobs.png",
+    "icon": "tent-tree"
   }
 ]
