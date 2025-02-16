@@ -7,6 +7,7 @@ import React from 'react';
 import { LinearGradient } from 'tamagui/linear-gradient';
 import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider';
 import router from 'next/router';
+import { Spacer } from 'tamagui'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -33,6 +34,7 @@ const AppContent = ({ Component, pageProps, router }: AppProps) => {
       />
       <Stack f={1} bg="transparent">
         <Header />
+        <Spacer height={60}/>
         <Component {...pageProps} />
         <Footer />
       </Stack>

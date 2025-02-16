@@ -10,6 +10,12 @@ function Header() {
     <YStack
       p="$4"
       bg="transparent"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      zIndex="1000"
+      style={{ backdropFilter: "blur(10px)" }}
     >
       <XStack
         gap="$6"
