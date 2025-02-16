@@ -2,6 +2,7 @@ import React from 'react';
 import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
 import ExperienceCard from '../components/Experience';
 import experiences from '../data/experiences.json';
+import { Section } from '../components/Section';
 
 const Portfolio = () => {
   return (
@@ -24,47 +25,38 @@ const Portfolio = () => {
       </YStack>
 
       <YStack p="$6" gap="$4">
-        {/* Acerca de mí */}
-        <YStack>
-          <Text fontSize="$8" fontWeight="bold">Sobre Mí</Text>
-          <Text fontSize="$5" mt="$2">Soy un ingeniero en QA y desarrollo especializado en pruebas automatizadas, CI/CD y mejora de calidad en entornos DevOps...</Text>
-        </YStack>
+        <Section title="Sobre Mí">
+          <Text fontSize="$5" mt="$2" pl="$4">
+            Soy un ingeniero en QA y desarrollo especializado en pruebas automatizadas, CI/CD y mejora de calidad en entornos DevOps...
+          </Text>
+        </Section>
 
-        {/* Experiencia */}
-        <YStack>
-          <Text fontSize="$8" fontWeight="bold">Experiencia</Text>
+        <Section title="Experiencia">
           {experiences.map((exp) => (
-            <ExperienceCard title={exp.title} company={exp.company} dates={exp.dates} description={exp.description} />
+            <ExperienceCard key={exp.title} title={exp.title} company={exp.company} dates={exp.dates} description={exp.description} />
           ))}
-        </YStack>
+        </Section>
 
-        {/* Habilidades */}
-        <YStack>
-          <Text fontSize="$8" fontWeight="bold">Habilidades</Text>
+        <Section title="Habilidades">
           <XStack pl="$4" flexWrap="wrap" gap="$2" mt="$4">
-            <Button>Selenium</Button>
-            <Button>Cypress</Button>
-            <Button>Playwright</Button>
-            <Button>Jenkins</Button>
-            <Button>Docker</Button>
-            <Button>Kubernetes</Button>
+            {["Selenium", "Cypress", "Playwright", "Jenkins", "Docker", "Kubernetes"].map(skill => (
+              <Button key={skill}>{skill}</Button>
+            ))}
           </XStack>
-        </YStack>
+        </Section>
 
-        {/* Proyectos */}
-        <YStack>
-          <Text fontSize="$8" fontWeight="bold">Proyectos</Text>
+        <Section title="Proyectos">
           <YStack pl="$4">
-          <YStack mt="$4">
-            <Text fontSize="$6" fontWeight="bold">Automated Test Framework</Text>
-            <Text fontSize="$4">Desarrollo de un framework de pruebas en Selenium + Java...</Text>
+            <YStack mt="$4">
+              <Text fontSize="$6" fontWeight="bold">Automated Test Framework</Text>
+              <Text fontSize="$4">Desarrollo de un framework de pruebas en Selenium + Java...</Text>
+            </YStack>
+            <YStack mt="$4">
+              <Text fontSize="$6" fontWeight="bold">CI/CD Testing Pipeline</Text>
+              <Text fontSize="$4">Integración de pruebas automatizadas en GitHub Actions...</Text>
+            </YStack>
           </YStack>
-          <YStack mt="$4">
-            <Text fontSize="$6" fontWeight="bold">CI/CD Testing Pipeline</Text>
-            <Text fontSize="$4">Integración de pruebas automatizadas en GitHub Actions...</Text>
-          </YStack>
-          </YStack>
-        </YStack>
+        </Section>
       </YStack>
     </YStack>
   );
