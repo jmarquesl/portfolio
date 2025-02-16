@@ -4,6 +4,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import NavLink from "./NavLink";
 import HamburgerMenu from "./HamburgerMenu";
 import Links from "./Links";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
   return (
@@ -28,6 +29,7 @@ function Header() {
         alignItems="center"
       >
         <ThemeSwitch />
+        <LanguageSwitcher />
         <XStack gap="$4" ml="auto">
           {useMedia().sm ? (
             <Links />
