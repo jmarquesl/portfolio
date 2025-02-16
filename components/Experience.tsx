@@ -1,5 +1,5 @@
 import React from "react";
-import { XStack, YStack, Text, Image } from "tamagui";
+import { XStack, Card, YStack, Text, Image } from "tamagui";
 
 interface ExperienceCardProps {
   title: string;
@@ -12,7 +12,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills }: ExperienceCardProps) => {
   return (
-    <YStack p="$4" bg="white" borderRadius="$4" shadow="md">
+    <Card p="$4" m="$2">  
       <XStack ai="center" gap="$4">
         <Image src={logo} width={50} height={50} alt={company} />
         <YStack>
@@ -27,7 +27,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, 
           <Text key={skill} bg="gray" color="white" p="$2" borderRadius="$2">{skill}</Text>
         ))}
       </XStack>
-    </YStack>
+    </Card>
   );
 };
 

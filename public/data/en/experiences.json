@@ -2,8 +2,8 @@
   {
     "title": "QA",
     "company": "Vibia",
-    "dates": "Jul. 2024 - Actualidad · 8 meses",
-    "location": "Gavà, Cataluña, España",
+    "dates": "Jul. 2024 - Present · 8 months",
+    "location": "Gavà, Catalonia, Spain",
     "description": "As part of the QA team in an Xtreme Programming (XP) environment, my primary goal is to promote quality from the initial stages of user story planning to production deployment.\n\nKey responsibilities include:\n- Driving quality from the start by ensuring processes align with high-quality standards.\n- Engaging in continuous pair programming with developers.\n- Building an automated testing platform using Playwright and Cucumber, integrated with Jira through Xray.\n\nI am committed to technical excellence and innovation in QA.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/vibia.png"
@@ -11,8 +11,8 @@
   {
     "title": "QA Engineer",
     "company": "InnoIT Consulting",
-    "dates": "Jul. 2023 - Jul. 2024 · 1 año 1 mes",
-    "location": "Barcelona, Cataluña, España",
+    "dates": "Jul. 2023 - Jul. 2024 · 1 year 1 month",
+    "location": "Barcelona, Catalonia, Spain",
     "description": "Contributed to software quality assurance and automation testing in Agile development environments.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/innoit.png"
@@ -20,8 +20,8 @@
   {
     "title": "QA Automation Engineer",
     "company": "Scopely",
-    "dates": "Abr. 2021 - Abr. 2023 · 2 años 1 mes",
-    "location": "Barcelona, España",
+    "dates": "Apr. 2021 - Apr. 2023 · 2 years 1 month",
+    "location": "Barcelona, Spain",
     "description": "Focused on automated testing, black-box testing, and mobile testing for gaming applications.",
     "skills": ["Bug Tracking", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "JIRA", "Communication"],
     "logo": "/static/images/scopely.png"
@@ -29,8 +29,8 @@
   {
     "title": "Quality Assurance",
     "company": "SEAT CODE",
-    "dates": "Nov. 2019 - Abr. 2021 · 1 año 6 meses",
-    "location": "Barcelona, España",
+    "dates": "Nov. 2019 - Apr. 2021 · 1 year 6 months",
+    "location": "Barcelona, Spain",
     "description": "Worked on API testing, mobile testing, and quality assurance automation.",
     "skills": ["Bug Tracking", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Black Box Testing", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/seatcode.png"
@@ -38,8 +38,8 @@
   {
     "title": "Software Engineer In Test",
     "company": "Glovo",
-    "dates": "Mar. 2018 - Ago. 2019 · 1 año 6 meses",
-    "location": "Barcelona, España",
+    "dates": "Mar. 2018 - Aug. 2019 · 1 year 6 months",
+    "location": "Barcelona, Spain",
     "description": "Developed automated testing frameworks and enhanced testing strategies for Glovo's platform.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/glovo.png"
@@ -47,8 +47,8 @@
   {
     "title": "QA",
     "company": "Unnax",
-    "dates": "Sept. 2016 - Mar. 2018 · 1 año 7 meses",
-    "location": "L'Hospitalet de Llobregat, España",
+    "dates": "Sep. 2016 - Mar. 2018 · 1 year 7 months",
+    "location": "L'Hospitalet de Llobregat, Spain",
     "description": "QA and Support for Unnax's financial technology solutions.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "API Testing", "JIRA", "Communication"],
     "logo": "/static/images/unnax.png"
@@ -56,8 +56,8 @@
   {
     "title": "Tech Intern",
     "company": "Turijobs",
-    "dates": "Nov. 2015 - May. 2016 · 7 meses",
-    "location": "L'Hospitalet de Llobregat, España",
+    "dates": "Nov. 2015 - May. 2016 · 7 months",
+    "location": "L'Hospitalet de Llobregat, Spain",
     "description": "Testing and QA for Turijobs' job platform.",
     "skills": ["Bug Tracking", "Quality Assurance", "Black Box Testing", "Communication"],
     "logo": "/static/images/turijobs.png"
