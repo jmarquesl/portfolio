@@ -13,6 +13,7 @@ interface ExperienceCardProps {
 }
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon }: ExperienceCardProps) => {
+  console.log(icon)
   return (
     <Card p="$4" m="$2">  
       <XStack ai="center" gap="$4">

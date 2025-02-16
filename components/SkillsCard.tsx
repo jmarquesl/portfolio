@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { XStack, Card, YStack, Text, H2 } from "tamagui";
-import { DynamicIcon } from 'lucide-react/dynamic';
 import i18n from "../i18n";
 
 

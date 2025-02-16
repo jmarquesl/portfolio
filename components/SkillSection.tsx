@@ -18,7 +18,7 @@ const SkillSection: React.FC = () => {
     }, [i18n.language]);
     return (
         <YStack>
-            {isSkillsLoading ? <></> : (skills.map((skill) => (
+            {isSkillsLoading ? <></> : (skills.map((skill: any) => (
                 <SkillCard
                     area={skill.area}
                     skills={skill.skills} />

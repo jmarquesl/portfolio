@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
-import ExperienceCard from '../components/Experience';
+import ExperienceCard from '../components/ExperienceCard';
 import { Section } from '../components/Section';
 import { useTranslation } from 'react-i18next';
 import SkillSection from '../components/SkillSection';
+import ExperienceSection from '../components/ExperienceSection';
 
 const AboutMePage = () => {
   const { t, i18n } = useTranslation();
@@ -34,18 +35,7 @@ const AboutMePage = () => {
         </Section>
 
         <Section title={t("experience")}>
-          {isExperiencesLoading ? <></>: (experiences.map((exp) => (
-              <ExperienceCard
-                key={exp.title}
-                title={exp.title}
-                company={exp.company}
-                dates={exp.dates}
-                description={exp.description}
-                logo={exp.logo}
-                skills={exp.skills}
-                icon={exp.icon}
-              />
-            )))}
+          <ExperienceSection/>
         </Section>
 
         <Section title={t("skills")}>
