@@ -1,10 +1,11 @@
 import React from "react";
-import { XStack, YStack, Text } from "tamagui";
+import { XStack, YStack, Text, useMedia } from "tamagui";
 import ThemeSwitch from "./ThemeSwitch";
 import NavLink from "./NavLink";
+import HamburgerMenu from "./HamburugerMenu";
 
-const Header = () => (
-  <YStack
+function Header(){
+  return(<YStack
     p="$4"
     ai="center"
     bg="transparent"
@@ -17,11 +18,18 @@ const Header = () => (
       <Text fontSize="$8" fontWeight="bold" textAlign="center">
         Mi Portfolio
       </Text>
-      <NavLink href="/">Inicio</NavLink>
-      <NavLink href="/portfolio">Sobre Mí</NavLink>
-      <NavLink href="/contact">Contacto</NavLink>
+      
+      {useMedia().sm ? (
+        <>
+          <NavLink href="/">Inicio</NavLink>
+          <NavLink href="/portfolio">Sobre Mí</NavLink>
+          <NavLink href="/contact">Contacto</NavLink>
+        </>
+      ) : (
+        <HamburgerMenu />
+      )}
     </XStack>
-  </YStack>
-);
+  </YStack>)
+};
 
 export default Header;
