@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import React from 'react';
 import { LinearGradient } from 'tamagui/linear-gradient';
-import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider'; 
+import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider';
 import router from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -25,7 +25,7 @@ const AppContent = ({ Component, pageProps, router }: AppProps) => {
     <Theme name={theme}>
       <LinearGradient
         width="100%"
-        height="100vh"
+        height="100%"
         colors={['$backgroundFocus', '$background']}
         start={[0, 1]}
         end={[0, 0]}
