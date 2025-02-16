@@ -2,10 +2,21 @@ import { YStack, Text } from "tamagui";
 import ExperienceCard from "./ExperienceCard";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IconName } from "lucide-react/dynamic";
 
 const ExperienceSection = () => {
     const { t, i18n } = useTranslation();
-    const [experiences, setExperiences] = useState([]);
+    interface Experience {
+        title: string;
+        company: string;
+        dates: string;
+        description: string;
+        logo: string;
+        skills: string[];
+        icon: IconName;
+    }
+
+    const [experiences, setExperiences] = useState<Experience[]>([]);
     const [isExperiencesLoading, setIsExperiencesLoading] = useState(true);
 
     useEffect(() => {

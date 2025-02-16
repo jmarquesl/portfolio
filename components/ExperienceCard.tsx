@@ -1,6 +1,6 @@
 import React from "react";
 import { XStack, Card, YStack, Text, Image } from "tamagui";
-import { DynamicIcon } from 'lucide-react/dynamic';
+import { DynamicIcon, IconName } from 'lucide-react/dynamic';
 
 interface ExperienceCardProps {
   title: string;
@@ -9,11 +9,10 @@ interface ExperienceCardProps {
   description: string;
   logo: string;
   skills: string[];
-  icon: string
+  icon: IconName
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon }: ExperienceCardProps) => {
-  console.log(icon)
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon }) => {
   return (
     <Card p="$4" m="$2">  
       <XStack ai="center" gap="$4">
