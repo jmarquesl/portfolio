@@ -43,15 +43,7 @@ const AppContent = ({ Component, pageProps }: AppContentProps) => {
 
   return (
     <Theme name={theme}>
-      <LinearGradient
-        width="100%"
-        height="100%"
-        colors={['$backgroundFocus', '$background']}
-        start={[0, 1]}
-        end={[0, 0]}
-        style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
-      />
-      <Stack f={1} bg="transparent">
+      <Stack f={1} background="$background">
       <YStack minHeight="100vh" jc="space-between"> {/* Estructura que empuja el footer */}
         <YStack flex={1} paddingTop="80px">
         <Header />

@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <Button themeInverse onPress={toggleLanguage}>
+    <Button bg="$backgroundFocus" onPress={toggleLanguage}>
       <Text fontWeight="bold">{currentLanguage === "es" ? "EN" : "ES"}</Text>
     </Button>
   );

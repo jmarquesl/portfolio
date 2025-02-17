@@ -9,13 +9,13 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ area, skills }) => {
   return (
-    <Card p="$4" m="$2">
-      <Card.Header padded>
+    <Card pt="$2" pb="$5" pl="$5" pr="$5" m="$2">
+      <Card.Header p="$2">
       <Text fontSize="$6" fontWeight="bold">{area}</Text>
       </Card.Header>
         <YStack gap="$2">
           {skills.map((skill: string) => (
-            <Text key={skill} bg="gray" color="white" p="$2" borderRadius="$2">{skill}</Text>
+            <Text key={skill} bg="purple" color="white" p="$2" borderRadius="$1">{skill}</Text>
           ))}
         </YStack>
     </Card>
