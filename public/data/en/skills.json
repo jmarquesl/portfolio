@@ -1,40 +1,49 @@
 [
   {
-    "area": "Testing",
+    "area": "Automation",
     "skills": [
-      "Mobile test automation with Appium with Serenity",
-      "API test automation with Karate, Rest Assured, Pytest and Postman",
-      "Web test automation with Cypress and Selenium",
-      "API documentation with Swagger/OAS3"
+      "Mobile test automation with Appium",
+      "API test automation with Rest Assured, Postman, Karate",
+      "Web automation with Cypress, Selenium and Postman",
+      "Testing with Jest, Junit and PyTest",
+      "BDD with Cucumber",
+      "Implemented patterns like Page Object Model or Screenplay Pattern"
     ]
   },
   {
     "area": "Coding",
     "skills": [
-      "Python: Scripting and testing knowledge",
-      "Javascript: Scripting and testing knowledge",
-      "Java: Medium knowledge. Able to implement test frameworks",
-      "Kotlin: Medium knowledge. Able to implement test frameworks",
-      "SQL: Able to create queries to check data for testing purposes"
+      "Javascript: Advanced knowledge on test automation. Knowledge on development on Node and React",
+      "Java: Advanced knowledge on test automation.",
+      "Kotlin: Advanced knowledge on test automation.",
+      "Python: Intermediate test automation and scripting knowledge.",
+      "SQL: Able to create queries to check data for testing purposes."
     ]
   },
   {
     "area": "CI",
     "skills": [
-      "Github Actions",
-      "Jenkins CI: Creation of pipelines with groovy and Job DSL"
+      "Worked on CI environments with TBD.",
+      "Edited Github actions to trigger automated tests.",
+      "Edited and created Jenkins Pipelines with groovy and Job DSL.",
+      "Edited Gitlab pipelines to trigger automated tests."
     ]
   },
   {
     "area": "Version Control",
     "skills": [
-      "Git w/ Github, through git CLI and git clients like Sourcetree"
+      "GithubFlow",
+      "Gitflow",
+      "TBD",
+      "Git"
     ]
   },
   {
     "area": "Methodologies",
     "skills": [
-      "Worked with Agile methodologies since 2016"
+      "Agile",
+      "Scrum",
+      "Xtreme Programming"
     ]
   }
 ]

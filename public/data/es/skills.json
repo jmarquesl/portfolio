@@ -1,40 +1,49 @@
 [
   {
-    "area": "Automation",
+    "area": "Automatización",
     "skills": [
-      "Automatización de pruebas móviles con Appium y Serenity",
-      "Automatización de pruebas API con Karate, Rest Assured, Pytest y Postman",
-      "Automatización de pruebas web con Cypress y Selenium",
-      "Documentación de API con Swagger/OAS3"
+      "Automatización de pruebas móviles con Appium",
+      "Automatización de pruebas API con Rest Assured, Postman, Karate",
+      "Automatización web con Cypress, Selenium y Postman",
+      "Testing con Jest, Junit y PyTest",
+      "BDD con Cucumber",
+      "Implementación de patrones como Page Object Model o Screenplay Pattern"
     ]
   },
   {
     "area": "Programación",
     "skills": [
-      "Python: Conocimientos en scripting y pruebas",
-      "Javascript: Conocimientos en scripting y pruebas",
-      "Java: Conocimiento medio. Capaz de implementar marcos de pruebas",
-      "Kotlin: Conocimiento medio. Capaz de implementar marcos de pruebas",
-      "SQL: Capaz de crear consultas para verificar datos con fines de prueba"
+      "Javascript: Conocimientos avanzados en automatización de pruebas. Conocimiento en desarrollo con Node y React",
+      "Java: Conocimientos avanzados en automatización de pruebas.",
+      "Kotlin: Conocimientos avanzados en automatización de pruebas.",
+      "Python: Conocimientos intermedios en automatización de pruebas y scripting.",
+      "SQL: Capaz de crear consultas para verificar datos con fines de prueba."
     ]
   },
   {
-    "area": "Integración Continua (CI)",
+    "area": "CI",
     "skills": [
-      "Github Actions",
-      "Jenkins CI: Creación de pipelines con Groovy y Job DSL"
+      "Experiencia en entornos de CI con TBD.",
+      "Edición de Github Actions para ejecutar pruebas automatizadas.",
+      "Edición y creación de pipelines de Jenkins con Groovy y Job DSL.",
+      "Edición de pipelines de GitLab para ejecutar pruebas automatizadas."
     ]
   },
   {
-    "area": "Control de Versiones",
+    "area": "Control de versiones",
     "skills": [
-      "Git con Github, utilizando CLI de Git y clientes como Sourcetree"
+      "GithubFlow",
+      "Gitflow",
+      "TBD",
+      "Git"
     ]
   },
   {
     "area": "Metodologías",
     "skills": [
-      "Experiencia trabajando con metodologías ágiles desde 2016"
+      "Ágil",
+      "Scrum",
+      "Programación Extrema"
     ]
   }
 ]
