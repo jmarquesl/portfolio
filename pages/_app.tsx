@@ -41,7 +41,7 @@ const AppContent = ({ Component, pageProps }: AppContentProps) => {
   const { theme } = useThemeSetting();
 
   const pageTitle = pageProps?.metadata?.title 
-    ? `${pageProps.metadata.title} | Jordi Marquès Llaberia`
+    ? `${pageProps.metadata.title} | Jordi Marqués Llaberia`
     : "Jordi's Portfolio";
 
   return (
