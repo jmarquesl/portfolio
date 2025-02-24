@@ -44,7 +44,7 @@ const AppContent = ({ Component, pageProps }: AppContentProps) => {
   return (
     <Theme name={theme}>
       <Stack f={1} background="$background">
-      <YStack minHeight="100vh" jc="space-between"> {/* Estructura que empuja el footer */}
+      <YStack minHeight="100vh" jc="space-between">
         <YStack flex={1} paddingTop="80px">
         <Header />
         <Component {...pageProps} />

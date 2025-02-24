@@ -5,7 +5,7 @@ export default function HomePage() {
   const { t, i18n } = useTranslation();
   return (
     <YStack ai="center" w="100%" p="$4" alignItems="center">
-      {/* Sección de presentación */}
+
       <YStack maxWidth="100%" p="$4">
         <XStack gap="$4" ai="center">
           <Avatar circular size="$10">
@@ -21,7 +21,7 @@ export default function HomePage() {
         </XStack>
       </YStack>
 
-      {/* Texto de presentación */}
+
       <YStack w="100%" maxWidth={700} p="$4" alignItems="center">
         <Text fontSize="$8" fontWeight="bold" textAlign="center">
           {t("intro")}
@@ -34,7 +34,7 @@ export default function HomePage() {
         </Text>
       </YStack>
 
-      {/* Frase inspiracional */}
+
       <YStack w="90%" maxWidth={600} p="$4">
         <Text fontSize="$7" fontWeight="bold" textAlign="center">
           {t("quote")}

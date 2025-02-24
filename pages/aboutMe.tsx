@@ -11,7 +11,6 @@ const AboutMePage = () => {
 
   return (
     <YStack f={1} bg="transparent" p="$4">
-      {/* Header */}
       <YStack p="$6" gap="$4">
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">
