@@ -7,14 +7,13 @@ import {
 } from "next-i18next-static-site";
 import locales from "../lib/locales";
 import type { AppProps } from 'next/app';
-import { TamaguiProvider, Stack, Theme, Spacer, YStack } from 'tamagui';
+import { TamaguiProvider, Stack, Theme, YStack } from 'tamagui';
 import { config } from '../tamagui.config';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import React from 'react';
-import { LinearGradient } from 'tamagui/linear-gradient';
 import { ThemeProvider, useThemeSetting } from '../context/ThemeProvider';
-import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const i18n = {
@@ -27,10 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <TamaguiProvider config={config}>
-      <I18nProvider i18n={i18n}>
-      <ThemeProvider children={<AppContent Component={Component} pageProps={pageProps} />}>
+      <ThemeProvider>
+        <I18nProvider i18n={i18n}>
+          <AppContent Component={Component} pageProps={pageProps} />
+        </I18nProvider>
       </ThemeProvider>
-      </I18nProvider>
     </TamaguiProvider>
   );
 }
@@ -39,20 +39,35 @@ type AppContentProps = Omit<AppProps, 'router'>;
 
 const AppContent = ({ Component, pageProps }: AppContentProps) => {
   const { theme } = useThemeSetting();
-  const router = useRouter(); 
+
+  const pageTitle = pageProps?.metadata?.title 
+    ? `${pageProps.metadata.title} | Jordi Marquès Llaberia`
+    : "Jordi's Portfolio";
 
   return (
-    <Theme name={theme}>
-      <Stack f={1} background="$background">
-      <YStack minHeight="100vh" jc="space-between">
-        <YStack flex={1} paddingTop="80px">
-        <Header />
-        <Component {...pageProps} />
-        </YStack>
-        <Footer />
-        </YStack>
-      </Stack>
-    </Theme>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        {pageProps?.metadata?.description && (
+          <meta name="description" content={pageProps.metadata.description} />
+        )}
+        {pageProps?.metadata?.keywords && (
+          <meta name="keywords" content={pageProps.metadata.keywords} />
+        )}
+      </Head>
+
+      <Theme name={theme}>
+        <Stack f={1} background="$background">
+          <YStack minHeight="100vh" jc="space-between">
+            <YStack flex={1} paddingTop="80px">
+              <Header />
+              <Component {...pageProps} />
+            </YStack>
+            <Footer />
+          </YStack>
+        </Stack>
+      </Theme>
+    </>
   );
 };
 

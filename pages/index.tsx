@@ -1,5 +1,20 @@
 import { Button, YStack, Text, Avatar, XStack } from "tamagui";
 import { useTranslation } from "react-i18next";
+import { Metadata } from "next";
+
+export async function getStaticProps() {
+  return {
+    props: {
+      metadata
+    }
+  }
+}
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Home Page",
+  keywords: "Home, Portfolio",
+}
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();

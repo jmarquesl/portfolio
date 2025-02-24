@@ -5,6 +5,21 @@ import { Section } from '../components/Section';
 import { useTranslation } from 'react-i18next';
 import SkillSection from '../components/SkillSection';
 import ExperienceSection from '../components/ExperienceSection';
+import { Metadata } from 'next';
+
+export async function getStaticProps() {
+  return {
+    props: {
+      metadata
+    }
+  }
+}
+
+export const metadata: Metadata ={
+  title: "About Me",
+  description: "About Me Page",
+  keywords: "About Me, Experience, Skills"
+}
 
 const AboutMePage = () => {
   const { t, i18n } = useTranslation();

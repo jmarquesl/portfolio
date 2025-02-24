@@ -2,6 +2,21 @@ import { YStack, XStack, Text, Anchor, Separator, Avatar, Stack } from "tamagui"
 import { Linkedin, Github, Mail } from "lucide-react";
 import NavLink from "../components/NavLink";
 import React from "react";
+import { Metadata } from "next";
+
+export async function getStaticProps() {
+    return {
+      props: {
+        metadata
+      }
+    }
+  }
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description: "Contact Page",
+    keywords: "Contact, Linkedin, Github, Email",
+}
 
 export default function ContactPage() {
     return (
