@@ -47,7 +47,7 @@ export default function ContactPage() {
 
                     <XStack ai="center" gap="$3">
                         <Mail size={44} />
-                        <NavLink href="jordi.marquesllaberia@gmail.com">
+                        <NavLink href="mailto:jordi.marquesllaberia@gmail.com">
                             <Text fontSize="$6" fontWeight="600">Email</Text>
                         </NavLink>
                     </XStack>
