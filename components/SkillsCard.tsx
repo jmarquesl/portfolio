@@ -9,7 +9,10 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ area, skills }) => {
   return (
-    <Card pt="$2" pb="$5" pl="$5" pr="$5" m="$2">
+    <Card pt="$2" pb="$5" pl="$5" pr="$5" m="$2" hoverStyle={{
+      scale: 1.01,
+      
+    }}>
       <Card.Header p="$2">
       <Text fontSize="$6" fontWeight="bold">{area}</Text>
       </Card.Header>
