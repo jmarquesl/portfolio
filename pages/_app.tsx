@@ -59,7 +59,7 @@ const AppContent = ({ Component, pageProps }: AppContentProps) => {
       <Theme name={theme}>
         <Stack f={1} background="$background">
           <YStack minHeight="100vh" jc="space-between">
-            <YStack flex={1} paddingTop="80px">
+            <YStack flex={1}>
               <Header />
               <Component {...pageProps} />
             </YStack>

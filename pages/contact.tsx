@@ -6,11 +6,11 @@ import { Metadata } from "next";
 
 export async function getStaticProps() {
     return {
-      props: {
-        metadata
-      }
+        props: {
+            metadata
+        }
     }
-  }
+}
 
 export const metadata: Metadata = {
     title: "Contact",
@@ -20,7 +20,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <YStack alignItems="center">
+        <YStack
+            flex={1} alignItems="center" justifyContent="center"
+        >
             <XStack f={1} ai="center" jc="center" gap="$4" p="$6" alignItems="center">
                 <Avatar circular size="$15">
                     <Avatar.Image src="/portfolio/static/images/contact.jpg" />

@@ -25,7 +25,7 @@ const AboutMePage = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <YStack f={1} bg="transparent" p="$4" width="100%" alignItems="center">
+    <YStack f={1} bg="transparent" p="$4" width="100%" alignItems="center" paddingTop="80px">
       <YStack p="$6" gap="$4" width="80%"  >
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">

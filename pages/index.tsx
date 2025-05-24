@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   return (
-    <YStack ai="center" w="100%" p="$4" alignItems="center">
+    <YStack ai="center" w="100%" p="$4" alignItems="center" paddingTop="80px">
 
       <YStack maxWidth="100%" p="$4">
         <XStack gap="$4" ai="center">
