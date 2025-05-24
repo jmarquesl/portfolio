@@ -24,33 +24,33 @@ export default function ContactPage() {
             flex={1} alignItems="center" justifyContent="center"
         >
             <XStack f={1} ai="center" jc="center" gap="$4" p="$6" alignItems="center">
-                <Avatar circular size="$15">
-                    <Avatar.Image src="/portfolio/static/images/contact.jpg" />
+                <Avatar circular size="$20">
+                    <Avatar.Image source="/portfolio/static/images/contact.jpg" />
                     <Avatar.Fallback bc="$gray7" />
                 </Avatar>
 
                 <YStack gap="$3">
                     <XStack ai="center" gap="$3">
-                            <Linkedin size={34} />
-                            <NavLink href="https://www.linkedin.com/in/jordi-marqu%C3%A9s-llaberia-11685145/"
-                            target="_blank">Linkedin</NavLink>
-                        </XStack>
+                        <Linkedin size={44} />
+                        <NavLink href="https://www.linkedin.com/in/jordi-marqu%C3%A9s-llaberia-11685145/"
+                            target="_blank"><Text fontSize="$6" fontWeight="600">Linkedin</Text></NavLink>
+                    </XStack>
 
-                        <XStack ai="center" gap="$3">
-                            <Github size={34} />
-                            <NavLink
-                                href="https://github.com/jmarquesl"
-                            >
-                                Github
-                            </NavLink>
-                        </XStack>
+                    <XStack ai="center" gap="$3">
+                        <Github size={44} />
+                        <NavLink
+                            href="https://github.com/jmarquesl"
+                        >
+                             <Text fontSize="$6" fontWeight="600">Github</Text>
+                        </NavLink>
+                    </XStack>
 
-                        <XStack ai="center" gap="$3">
-                            <Mail size={34} />
-                            <NavLink href="mailto:tuemail@example.com">
-                                Email
-                            </NavLink>
-                        </XStack>
+                    <XStack ai="center" gap="$3">
+                        <Mail size={44} />
+                        <NavLink href="jordi.marquesllaberia@gmail.com">
+                            <Text fontSize="$6" fontWeight="600">Email</Text>
+                        </NavLink>
+                    </XStack>
                 </YStack>
             </XStack>
         </YStack>

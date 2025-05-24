@@ -11,7 +11,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, target }) => (
   <Link href={href} passHref legacyBehavior target={target}>
     <Stack
-      as="a"
+      as="navLink"
       px="$3"
       py="$2"
       br="$4"
