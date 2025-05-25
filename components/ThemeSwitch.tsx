@@ -8,7 +8,7 @@ const ThemeSwitch = () => {
 
   return (
     <Switch size="$4" checked={theme === 'dark'} onCheckedChange={toggleTheme}>
-      <Switch.Thumb animation="bouncy" 
+      <Switch.Thumb animation="medium" 
         style={{ 
           display: 'flex', 
           alignItems: 'center', 
