@@ -1,21 +1,38 @@
-import { YStack, XStack, Text, View, Tooltip, Card } from 'tamagui'
+import { YStack, XStack, Text, View, Tooltip } from 'tamagui'
+import ExperienceCard from './ExperienceCard'
+import { IconName } from 'lucide-react/dynamic'
 
-const experiences = [
+interface Experience {
+  title: string
+  company: string
+  description: string
+  logo: string
+  skills: string[]
+  icon: IconName
+  start_date: string
+  end_date: string | null
+}
+
+const experiences: Experience[] = [
   {
     title: 'QA Engineer',
     company: 'InnoIT Consulting',
-    from: new Date('2023-07-01'),
-    to: new Date('2024-07-01'),
-    color: '#9333ea',
-    description: 'Contributed to QA and automation testing in Agile environments.'
+    start_date: '2023-07-01',
+    end_date: '2024-07-01',
+    logo: '/logos/innoit.svg',
+    description: 'Contributed to QA and automation testing in Agile environments.',
+    skills: ['Playwright', 'Jest', 'GitHub Actions'],
+    icon: 'bug'
   },
   {
     title: 'QA',
     company: 'Vibia',
-    from: new Date('2024-07-01'),
-    to: new Date('2025-05-01'),
-    color: '#7c3aed',
-    description: 'Building testing platform with Playwright and Cucumber.'
+    start_date: '2024-07-01',
+    end_date: null,
+    logo: '/logos/vibia.svg',
+    description: 'Building testing platform with Playwright and Cucumber.',
+    skills: ['Cucumber', 'TypeScript'],
+    icon: 'check-circle'
   }
 ]
 
@@ -32,7 +49,7 @@ export function ExperienceTimeline() {
   return (
     <YStack w="100%" p="$4">
       <YStack position="relative" height={90}>
-        {/* Línea horizontal centrada verticalmente */}
+        {/* Línea centrada dinámicamente */}
         <View
           position="absolute"
           left={0}
@@ -44,22 +61,24 @@ export function ExperienceTimeline() {
           marginVertical="auto"
         />
 
-        {/* Barras de experiencia intercaladas */}
+        {/* Barras intercaladas */}
         {experiences.map((exp, index) => {
-          const left = calculatePosition(exp.from)
-          const right = calculatePosition(exp.to)
+          const from = new Date(exp.start_date)
+          const to = exp.end_date ? new Date(exp.end_date) : new Date()
+          const left = calculatePosition(from)
+          const right = calculatePosition(to)
           const width = right - left
           const isAbove = index % 2 === 0
 
           return (
-            <Tooltip key={index} placement={isAbove ? "top" : "bottom"}>
+            <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'}>
               <Tooltip.Trigger asChild>
                 <View
                   position="absolute"
                   left={`${left}%`}
                   width={`${width}%`}
                   height={20}
-                  backgroundColor={exp.color}
+                  backgroundColor="$color8"
                   borderRadius={10}
                   cursor="pointer"
                   hoverStyle={{ opacity: 0.9 }}
@@ -68,22 +87,23 @@ export function ExperienceTimeline() {
                 />
               </Tooltip.Trigger>
 
-              <Tooltip.Content>
-                <Card elevate size="$3" bordered p="$3" width={260}>
-                  <Card.Header>
-                    <Text fontWeight="bold">{exp.title} @ {exp.company}</Text>
-                  </Card.Header>
-                  <Card.Footer>
-                    <Text>{exp.description}</Text>
-                  </Card.Footer>
-                </Card>
+              <Tooltip.Content zIndex={100}>
+                <ExperienceCard
+                  title={exp.title}
+                  company={exp.company}
+                  dates={`${exp.start_date} - ${exp.end_date ?? 'Present'}`}
+                  description={exp.description}
+                  logo={exp.logo}
+                  skills={exp.skills}
+                  icon={exp.icon}
+                />
               </Tooltip.Content>
             </Tooltip>
           )
         })}
       </YStack>
 
-      {/* Fechas debajo */}
+      {/* Fechas base */}
       <XStack justifyContent="space-between" mt="$6">
         <Text>Jul 2023</Text>
         <Text>Jul 2024</Text>
