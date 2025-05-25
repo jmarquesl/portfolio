@@ -31,14 +31,28 @@ function calculatePosition(date: Date) {
 export function ExperienceTimeline() {
   return (
     <YStack w="100%" p="$4">
-      <XStack position="relative" h={60} borderBottomWidth={2} borderColor="$color" w="100%">
+      <YStack position="relative" height={90}>
+        {/* Línea horizontal centrada verticalmente */}
+        <View
+          position="absolute"
+          left={0}
+          right={0}
+          height={2}
+          backgroundColor="$color"
+          top={0}
+          bottom={0}
+          marginVertical="auto"
+        />
+
+        {/* Barras de experiencia intercaladas */}
         {experiences.map((exp, index) => {
           const left = calculatePosition(exp.from)
           const right = calculatePosition(exp.to)
           const width = right - left
+          const isAbove = index % 2 === 0
 
           return (
-            <Tooltip key={index} placement="top" >
+            <Tooltip key={index} placement={isAbove ? "top" : "bottom"}>
               <Tooltip.Trigger asChild>
                 <View
                   position="absolute"
@@ -49,6 +63,8 @@ export function ExperienceTimeline() {
                   borderRadius={10}
                   cursor="pointer"
                   hoverStyle={{ opacity: 0.9 }}
+                  top={isAbove ? 0 : undefined}
+                  bottom={isAbove ? undefined : 0}
                 />
               </Tooltip.Trigger>
 
@@ -65,10 +81,10 @@ export function ExperienceTimeline() {
             </Tooltip>
           )
         })}
-      </XStack>
+      </YStack>
 
-      {/* Timeline labels */}
-      <XStack justifyContent="space-between" mt="$2">
+      {/* Fechas debajo */}
+      <XStack justifyContent="space-between" mt="$6">
         <Text>Jul 2023</Text>
         <Text>Jul 2024</Text>
         <Text>Jul 2025</Text>
