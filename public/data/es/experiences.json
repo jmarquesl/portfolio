@@ -4,7 +4,7 @@
     "company": "Vibia",
     "dates": "Jul. 2024 - Presente · 8 meses",
     "start_date": "2024-07-01",
-    "end_date": "2025-05-25",
+    "end_date": null,
     "location": "Gavà, Cataluña, España",
     "description": "Como parte del equipo de QA en un entorno de Programación Extrema (XP), mi principal objetivo es promover la calidad desde las etapas iniciales de la planificación de historias de usuario hasta el despliegue en producción.\n\nResponsabilidades clave incluyen:\n- Impulsar la calidad desde el principio asegurando que los procesos se alineen con altos estándares de calidad.\n- Participar en programación en pareja continua con desarrolladores.\n- Construir una plataforma de pruebas automatizadas utilizando Playwright y Cucumber, integrada con Jira a través de Xray.\n\nEstoy comprometido con la excelencia técnica y la innovación en QA.",
     "skills": ["Seguimiento de errores", "Integración continua", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Programación", "JIRA", "JavaScript", "Comunicación"],
