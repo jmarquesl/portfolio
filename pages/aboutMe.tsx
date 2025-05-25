@@ -30,7 +30,7 @@ const AboutMePage = () => {
 
   return (
     <YStack f={1} bg="transparent" p="$4" width="100%" alignItems="center" paddingTop="80px">
-      <YStack p="$6" gap="$4" width="80%">
+      <YStack p="$6" gap="$4" width={!isMobile ? "100%" : "80%"}>
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">
             {t("presentation")}
