@@ -15,14 +15,14 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon }) => {
   return (
-    <Card  p="$4" m="$2" animation="fast" hoverStyle={{
+    <Card p="$4" m="$2" animation="fast" hoverStyle={{
       scale: 1.01,
     }}
     >
-      <XStack ai="center" gap="$4">
-      <DynamicIcon name={icon} size={48} color="purple"/>
-        <YStack>
-          <Text fontSize="$6" fontWeight="bold">{title}</Text>
+      <XStack ai="flex-start" gap="$4" >
+        <DynamicIcon name={icon} size={48} color="purple" />
+        <YStack flexShrink={1} minWidth={0} flexWrap="wrap">
+          <Text fontSize="$6" fontWeight="bold" >{title}</Text>
           <Text fontSize="$4">{company}</Text>
           <Text fontSize="$3" color="gray">{dates}</Text>
         </YStack>
