@@ -138,7 +138,7 @@ export function ExperienceTimeline() {
                     const isAbove = index % 2 === 0
 
                     return (
-                        <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'}>
+                        <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'} delay={0}>
                             <Tooltip.Trigger asChild>
                                 <View
                                     position="absolute"
@@ -161,6 +161,9 @@ export function ExperienceTimeline() {
                                 p="$0"
                                 elevation={0}
                                 borderRadius={0}
+                                animation="fast"
+                                enterStyle={{ opacity: 0, scale: 0.95 }}
+                                exitStyle={{ opacity: 0, scale: 0.95 }}
                             >
                                 <ExperienceCard
                                     title={exp.title}
@@ -172,6 +175,7 @@ export function ExperienceTimeline() {
                                     icon={exp.icon}
                                 />
                             </Tooltip.Content>
+
                         </Tooltip>
                     )
                 })}
