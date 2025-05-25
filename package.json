@@ -12,8 +12,7 @@
     "next-i18next-static-site": "^1.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.4.0",
-    "react-native-web": "^0.19.13"
+    "react-i18next": "^15.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

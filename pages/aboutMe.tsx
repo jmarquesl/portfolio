@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import SkillSection from '../components/SkillSection';
 import ExperienceSection from '../components/ExperienceSection';
 import { Metadata } from 'next';
+import { ExperienceTimeline } from '../components/ExperienceTimeline';
 
 export async function getStaticProps() {
   return {
@@ -32,6 +33,7 @@ const AboutMePage = () => {
            {t("presentation")}
           </Text>
         </Section>
+        {/* <ExperienceTimeline/> */}
 
         <Section title={t("experience")}>
           <ExperienceSection/>
