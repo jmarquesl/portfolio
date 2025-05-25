@@ -29,7 +29,7 @@ const AboutMePage = () => {
   const isMobile = media.sm
 
   return (
-    <YStack f={1} bg="transparent" p="$4" width="100%" alignItems="center" paddingTop="80px">
+    <YStack f={1} bg="transparent" width="100%" alignItems="center" paddingTop="80px">
       <YStack p="$6" gap="$4" width={!isMobile ? "100%" : "80%"}>
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">

@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <YStack
-            flex={1} alignItems="center" justifyContent="center"
+            flex={1} alignItems="center" justifyContent="center" paddingTop="100px"
         >
-            <XStack f={1} ai="center" jc="center" gap="$4" p="$6" alignItems="center">
+            <XStack f={1} ai="center" justifyContent="center" gap="$4" p="$6" alignItems="center" flexWrap="wrap">
                 <Avatar circular size="$20">
                     <Avatar.Image source="/portfolio/static/images/contact.jpg" />
                     <Avatar.Fallback bc="$gray7" />
