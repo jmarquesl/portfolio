@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react'
 import { YStack, XStack, Text, View, Tooltip } from 'tamagui'
 import ExperienceCard from './ExperienceCard'
 import { IconName } from 'lucide-react/dynamic'
+import { useTranslation } from 'react-i18next'
 
 interface Experience {
   title: string
@@ -13,43 +15,67 @@ interface Experience {
   end_date: string | null
 }
 
-const experiences: Experience[] = [
-  {
-    title: 'QA Engineer',
-    company: 'InnoIT Consulting',
-    start_date: '2023-07-01',
-    end_date: '2024-07-01',
-    logo: '/logos/innoit.svg',
-    description: 'Contributed to QA and automation testing in Agile environments.',
-    skills: ['Playwright', 'Jest', 'GitHub Actions'],
-    icon: 'bug'
-  },
-  {
-    title: 'QA',
-    company: 'Vibia',
-    start_date: '2024-07-01',
-    end_date: null,
-    logo: '/logos/vibia.svg',
-    description: 'Building testing platform with Playwright and Cucumber.',
-    skills: ['Cucumber', 'TypeScript'],
-    icon: 'check-circle'
+function calculatePosition(date: Date, min: Date, duration: number) {
+  const diff = date.getTime() - min.getTime()
+  return (diff / duration) * 100
+}
+
+function getTimelineRange(experiences: Experience[]) {
+  const startDates = experiences.map((e) => new Date(e.start_date))
+  const endDates = experiences.map((e) =>
+    e.end_date ? new Date(e.end_date) : new Date()
+  )
+
+  const min = new Date(Math.min(...startDates.map((d) => d.getTime())))
+  const max = new Date(Math.max(...endDates.map((d) => d.getTime())))
+
+  return { min, max, duration: max.getTime() - min.getTime() }
+}
+
+function generateYearMarkers(start: Date, end: Date): Date[] {
+  const dates = []
+  const year = start.getFullYear()
+  const endYear = end.getFullYear()
+
+  for (let y = year; y <= endYear; y++) {
+    dates.push(new Date(y, 0, 1)) // Solo año
   }
-]
 
-const startTimeline = new Date('2023-07-01')
-const endTimeline = new Date('2025-07-01')
-const timelineDuration = endTimeline.getTime() - startTimeline.getTime()
-
-function calculatePosition(date: Date) {
-  const diff = date.getTime() - startTimeline.getTime()
-  return (diff / timelineDuration) * 100
+  return dates
 }
 
 export function ExperienceTimeline() {
+  const { i18n } = useTranslation()
+  const [experiences, setExperiences] = useState<Experience[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const loadExperiences = async () => {
+      try {
+        const locale = i18n.language
+        const response = await fetch(`/portfolio/data/${locale}/experiences.json`)
+        const data = await response.json()
+        setExperiences(data)
+      } catch (err) {
+        console.error('Error loading experiences:', err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadExperiences()
+  }, [i18n.language])
+
+  if (isLoading) return null
+  if (!experiences.length) return <Text>No experience data available</Text>
+
+  const { min, max, duration } = getTimelineRange(experiences)
+  const markers = generateYearMarkers(min, max)
+
   return (
     <YStack w="100%" p="$4">
       <YStack position="relative" height={90}>
-        {/* Línea centrada dinámicamente */}
+        {/* Línea centrada */}
         <View
           position="absolute"
           left={0}
@@ -65,13 +91,13 @@ export function ExperienceTimeline() {
         {experiences.map((exp, index) => {
           const from = new Date(exp.start_date)
           const to = exp.end_date ? new Date(exp.end_date) : new Date()
-          const left = calculatePosition(from)
-          const right = calculatePosition(to)
+          const left = calculatePosition(from, min, duration)
+          const right = calculatePosition(to, min, duration)
           const width = right - left
           const isAbove = index % 2 === 0
 
           return (
-            <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'}>
+            <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'} allowHover>
               <Tooltip.Trigger asChild>
                 <View
                   position="absolute"
@@ -103,11 +129,13 @@ export function ExperienceTimeline() {
         })}
       </YStack>
 
-      {/* Fechas base */}
-      <XStack justifyContent="space-between" mt="$6">
-        <Text>Jul 2023</Text>
-        <Text>Jul 2024</Text>
-        <Text>Jul 2025</Text>
+      {/* Fechas con solo el año */}
+      <XStack justifyContent="space-between" mt="$4">
+        {markers.map((date, index) => (
+          <Text key={index} fontSize="$2">
+            {date.getFullYear()}
+          </Text>
+        ))}
       </XStack>
     </YStack>
   )
