@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, Text, Button, XStack, YStack, Avatar, useMedia } from 'tamagui';
-import ExperienceCard from '../components/ExperienceCard';
 import { Section } from '../components/Section';
 import { useTranslation } from 'react-i18next';
 import SkillSection from '../components/SkillSection';

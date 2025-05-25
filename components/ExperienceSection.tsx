@@ -14,6 +14,7 @@ const ExperienceSection = () => {
         logo: string;
         skills: string[];
         icon: IconName;
+        color?: string;
     }
 
     const [experiences, setExperiences] = useState<Experience[]>([]);
@@ -42,6 +43,7 @@ const ExperienceSection = () => {
                     logo={exp.logo}
                     skills={exp.skills}
                     icon={exp.icon}
+                    color={exp.color}
                 />
             )))}
         </YStack>

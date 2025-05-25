@@ -16,6 +16,7 @@ interface Experience {
     start_date: string
     end_date: string | null
     color?: string
+    dates: string
 }
 
 function getContrastingColor(hex: string): string {
@@ -189,11 +190,12 @@ export function ExperienceTimeline() {
                                 <ExperienceCard
                                     title={exp.title}
                                     company={exp.company}
-                                    dates={`${exp.start_date} - ${exp.end_date ?? 'Present'}`}
+                                    dates={exp.dates}
                                     description={exp.description}
                                     logo={exp.logo}
                                     skills={exp.skills}
                                     icon={exp.icon}
+                                    color={exp.color}
                                 />
                             </Tooltip.Content>
                         </Tooltip>

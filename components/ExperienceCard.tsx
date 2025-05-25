@@ -1,7 +1,6 @@
 import React from "react";
 import { XStack, Card, YStack, Text, Image } from "tamagui";
 import { DynamicIcon, IconName } from 'lucide-react/dynamic';
-import { LinearGradient } from "tamagui/linear-gradient";
 
 interface ExperienceCardProps {
   title: string;
@@ -10,17 +9,18 @@ interface ExperienceCardProps {
   description: string;
   logo: string;
   skills: string[];
-  icon: IconName
+  icon: IconName,
+  color?: string;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon }) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, company, dates, description, logo, skills, icon, color }) => {
   return (
     <Card p="$4" m="$2" animation="fast" hoverStyle={{
       scale: 1.01,
     }}
     >
       <XStack ai="flex-start" gap="$4" >
-        <DynamicIcon name={icon} size={48} color="purple" />
+        <DynamicIcon name={icon} size={48} color={color || "purple"} />
         <YStack flexShrink={1} minWidth={0} flexWrap="wrap">
           <Text fontSize="$6" fontWeight="bold" >{title}</Text>
           <Text fontSize="$4">{company}</Text>
