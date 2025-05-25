@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { YStack, XStack, Text, View, Tooltip } from 'tamagui'
+import { YStack, Text, View, Tooltip } from 'tamagui'
 import ExperienceCard from './ExperienceCard'
 import { IconName } from 'lucide-react/dynamic'
 import { useTranslation } from 'react-i18next'
@@ -34,19 +34,14 @@ function getTimelineRange(experiences: Experience[]) {
 
 function generateYearMarkers(start: Date, end: Date): Date[] {
     const dates = []
-
     let currentYear = start.getFullYear()
-    // Si no es enero, saltamos al siguiente año
     if (start.getMonth() > 0) {
         currentYear += 1
     }
-
     const endYear = end.getFullYear()
-
     for (let y = currentYear; y <= endYear; y++) {
         dates.push(new Date(y, 0, 1))
     }
-
     return dates
 }
 
@@ -80,7 +75,6 @@ export function ExperienceTimeline() {
 
     return (
         <YStack w="100%" p="$4">
-            {/* Timeline y contenido */}
             <YStack position="relative" height={110}>
                 {/* Línea central */}
                 <View
@@ -94,7 +88,7 @@ export function ExperienceTimeline() {
                     marginVertical="auto"
                 />
 
-                {/* Texto del año (en la parte superior) */}
+                {/* Texto del año (separado del marcador) */}
                 {markers.map((date, index) => {
                     const left = calculatePosition(date, min, duration)
                     return (
@@ -115,7 +109,7 @@ export function ExperienceTimeline() {
                     )
                 })}
 
-                {/* Línea vertical del marcador (centrada con la línea horizontal) */}
+                {/* Líneas verticales de año */}
                 {markers.map((date, index) => {
                     const left = calculatePosition(date, min, duration)
                     return (
@@ -134,9 +128,7 @@ export function ExperienceTimeline() {
                     )
                 })}
 
-
-
-                {/* Barras intercaladas */}
+                {/* Barras de experiencia intercaladas */}
                 {experiences.map((exp, index) => {
                     const from = new Date(exp.start_date)
                     const to = exp.end_date ? new Date(exp.end_date) : new Date()
@@ -154,7 +146,7 @@ export function ExperienceTimeline() {
                                     width={`${width}%`}
                                     height={20}
                                     backgroundColor="$color8"
-                                    borderRadius={10}
+                                    borderRadius={2}
                                     cursor="pointer"
                                     hoverStyle={{ opacity: 0.9 }}
                                     top={isAbove ? 0 : undefined}
@@ -162,7 +154,14 @@ export function ExperienceTimeline() {
                                 />
                             </Tooltip.Trigger>
 
-                            <Tooltip.Content zIndex={100}>
+                            <Tooltip.Content
+                                zIndex={100}
+                                backgroundColor="transparent"
+                                borderWidth={0}
+                                p="$0"
+                                elevation={0}
+                                borderRadius={0}
+                            >
                                 <ExperienceCard
                                     title={exp.title}
                                     company={exp.company}
