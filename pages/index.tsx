@@ -1,7 +1,6 @@
 import { Button, YStack, Text, Avatar, XStack } from "tamagui";
 import { useTranslation } from "react-i18next";
 import { Metadata } from "next";
-import { ReactTyped } from "react-typed";
 
 export async function getStaticProps() {
   return {
