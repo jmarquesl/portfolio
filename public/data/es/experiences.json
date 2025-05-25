@@ -1,6 +1,6 @@
 [
   {
-    "title": "QA",
+    "title": "Quality Assurance",
     "company": "Vibia",
     "dates": "Jul. 2024 - Presente · 8 meses",
     "start_date": "2024-07-01",
@@ -9,10 +9,11 @@
     "description": "Como parte del equipo de QA en un entorno de Programación Extrema (XP), mi principal objetivo es promover la calidad desde las etapas iniciales de la planificación de historias de usuario hasta el despliegue en producción.\n\nResponsabilidades clave incluyen:\n- Impulsar la calidad desde el principio asegurando que los procesos se alineen con altos estándares de calidad.\n- Participar en programación en pareja continua con desarrolladores.\n- Construir una plataforma de pruebas automatizadas utilizando Playwright y Cucumber, integrada con Jira a través de Xray.\n\nEstoy comprometido con la excelencia técnica y la innovación en QA.",
     "skills": ["Seguimiento de errores", "Integración continua", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Programación", "JIRA", "JavaScript", "Comunicación"],
     "logo": "/static/images/vibia.png",
-    "icon": "lightbulb"
+    "icon": "lightbulb",
+    "color": "#333333"
   },
   {
-    "title": "Ingeniero de QA",
+    "title": "Quality Assurance",
     "company": "InnoIT Consulting",
     "dates": "Jul. 2023 - Jul. 2024 · 1 año 1 mes",
     "start_date": "2023-07-01",
@@ -21,10 +22,11 @@
     "description": "Contribuí a la garantía de calidad del software y a la automatización de pruebas en entornos de desarrollo ágil.",
     "skills": ["Seguimiento de errores", "Integración continua", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Programación", "JIRA", "JavaScript", "Comunicación"],
     "logo": "/static/images/innoit.png",
-    "icon": "brain-circuit"
+    "icon": "brain-circuit",
+    "color": "#D84061"
   },
   {
-    "title": "Ingeniero de Automatización QA",
+    "title": "QA Automation Engineer",
     "company": "Scopely",
     "dates": "Abr. 2021 - Abr. 2023 · 2 años 1 mes",
     "start_date": "2021-04-01",
@@ -33,10 +35,11 @@
     "description": "Enfoque en pruebas automatizadas, pruebas de caja negra y pruebas móviles para aplicaciones de juegos.",
     "skills": ["Seguimiento de errores", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Jenkins", "Pruebas móviles", "Programación", "JIRA", "Comunicación"],
     "logo": "/static/images/scopely.png",
-    "icon": "gamepad-2"
+    "icon": "gamepad-2",
+    "color": "#0829B7"
   },
   {
-    "title": "Aseguramiento de Calidad",
+    "title": "Quality Assurance",
     "company": "SEAT CODE",
     "dates": "Nov. 2019 - Abr. 2021 · 1 año 6 meses",
     "start_date": "2019-11-01",
@@ -45,10 +48,11 @@
     "description": "Trabajé en pruebas de API, pruebas móviles y automatización de aseguramiento de calidad.",
     "skills": ["Seguimiento de errores", "Automatización de pruebas", "Metodologías ágiles", "Aseguramiento de calidad", "TypeScript", "Pruebas de caja negra", "Pruebas móviles", "Programación", "Pruebas de API", "JIRA", "JavaScript", "Comunicación"],
     "logo": "/static/images/seatcode.png",
-    "icon": "car"
+    "icon": "car",
+    "color": "#9EFFA4"
   },
   {
-    "title": "Ingeniero de Software en Pruebas",
+    "title": "Software Engineer In Test",
     "company": "Glovo",
     "dates": "Mar. 2018 - Ago. 2019 · 1 año 6 meses",
     "start_date": "2018-03-01",
@@ -57,7 +61,8 @@
     "description": "Desarrollé marcos de prueba automatizados y mejoré estrategias de prueba para la plataforma de Glovo.",
     "skills": ["Seguimiento de errores", "Python", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Jenkins", "Pruebas móviles", "Programación", "Pruebas de API", "JIRA", "JavaScript", "Comunicación"],
     "logo": "/static/images/glovo.png",
-    "icon": "bike"
+    "icon": "bike",
+    "color": "#FFC244"
   },
   {
     "title": "QA",
@@ -69,10 +74,11 @@
     "description": "QA y soporte para las soluciones de tecnología financiera de Unnax.",
     "skills": ["Seguimiento de errores", "Python", "Automatización de pruebas", "Aseguramiento de calidad", "Pruebas de caja negra", "Pruebas de API", "JIRA", "Comunicación"],
     "logo": "/static/images/unnax.png",
-    "icon": "landmark"
+    "icon": "landmark",
+    "color": "#1A3F63"
   },
   {
-    "title": "Prácticas Tecnológicas",
+    "title": "Tech Intern",
     "company": "Turijobs",
     "dates": "Nov. 2015 - May. 2016 · 7 meses",
     "start_date": "2015-11-01",
@@ -81,6 +87,7 @@
     "description": "Pruebas y aseguramiento de calidad para la plataforma de empleo de Turijobs.",
     "skills": ["Seguimiento de errores", "Aseguramiento de calidad", "Pruebas de caja negra", "Comunicación"],
     "logo": "/static/images/turijobs.png",
-    "icon": "tent-tree"
+    "icon": "tent-tree",
+    "color": "#F5A623"
   }
 ]

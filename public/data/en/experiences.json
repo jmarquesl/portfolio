@@ -1,6 +1,6 @@
 [
   {
-    "title": "QA",
+    "title": "Quality Assurance",
     "company": "Vibia",
     "dates": "Jul. 2024 - Present · 8 months",
     "start_date": "2024-07-01",
@@ -9,10 +9,11 @@
     "description": "As part of the QA team in an Xtreme Programming (XP) environment, my primary goal is to promote quality from the initial stages of user story planning to production deployment.\n\nKey responsibilities include:\n- Driving quality from the start by ensuring processes align with high-quality standards.\n- Engaging in continuous pair programming with developers.\n- Building an automated testing platform using Playwright and Cucumber, integrated with Jira through Xray.\n\nI am committed to technical excellence and innovation in QA.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/vibia.png",
-    "icon": "lightbulb"
+    "icon": "lightbulb",
+    "color": "#333333"
   },
   {
-    "title": "QA Engineer",
+    "title": "Quality Assurance",
     "company": "InnoIT Consulting",
     "dates": "Jul. 2023 - Jul. 2024 · 1 year 1 month",
     "start_date": "2023-07-01",
@@ -21,7 +22,8 @@
     "description": "Contributed to software quality assurance and automation testing in Agile development environments.",
     "skills": ["Bug Tracking", "Continuous Integration", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Programming", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/innoit.png",
-    "icon": "brain-circuit"
+    "icon": "brain-circuit",
+    "color": "#D84061"
   },
   {
     "title": "QA Automation Engineer",
@@ -33,7 +35,8 @@
     "description": "Focused on automated testing, black-box testing, and mobile testing for gaming applications.",
     "skills": ["Bug Tracking", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "JIRA", "Communication"],
     "logo": "/static/images/scopely.png",
-    "icon": "gamepad-2"
+    "icon": "gamepad-2",
+    "color": "#0829B7"
   },
   {
     "title": "Quality Assurance",
@@ -45,7 +48,8 @@
     "description": "Worked on API testing, mobile testing, and quality assurance automation.",
     "skills": ["Bug Tracking", "Test Automation", "Agile Methodologies", "Quality Assurance", "TypeScript", "Black Box Testing", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/seatcode.png",
-    "icon": "car"
+    "icon": "car",
+    "color": "#9EFFA4"
   },
   {
     "title": "Software Engineer In Test",
@@ -57,7 +61,8 @@
     "description": "Developed automated testing frameworks and enhanced testing strategies for Glovo's platform.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "Jenkins", "Mobile Testing", "Programming", "API Testing", "JIRA", "JavaScript", "Communication"],
     "logo": "/static/images/glovo.png",
-    "icon": "bike"
+    "icon": "bike",
+    "color": "#FFC244"
   },
   {
     "title": "QA",
@@ -69,7 +74,8 @@
     "description": "QA and Support for Unnax's financial technology solutions.",
     "skills": ["Bug Tracking", "Python", "Test Automation", "Quality Assurance", "Black Box Testing", "API Testing", "JIRA", "Communication"],
     "logo": "/static/images/unnax.png",
-    "icon": "landmark"
+    "icon": "landmark",
+    "color": "#1A3F63"
   },
   {
     "title": "Tech Intern",
@@ -81,6 +87,7 @@
     "description": "Testing and QA for Turijobs' job platform.",
     "skills": ["Bug Tracking", "Quality Assurance", "Black Box Testing", "Communication"],
     "logo": "/static/images/turijobs.png",
-    "icon": "tent-tree"
+    "icon": "tent-tree",
+    "color": "#F5A623"
   }
 ]

@@ -3,6 +3,8 @@ import { YStack, Text, View, Tooltip } from 'tamagui'
 import ExperienceCard from './ExperienceCard'
 import { IconName } from 'lucide-react/dynamic'
 import { useTranslation } from 'react-i18next'
+import { DynamicIcon } from 'lucide-react/dynamic'
+
 
 interface Experience {
     title: string
@@ -13,6 +15,16 @@ interface Experience {
     icon: IconName
     start_date: string
     end_date: string | null
+    color?: string
+}
+
+function getContrastingColor(hex: string): string {
+    const c = hex.replace('#', '')
+    const r = parseInt(c.substr(0, 2), 16)
+    const g = parseInt(c.substr(2, 2), 16)
+    const b = parseInt(c.substr(4, 2), 16)
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000
+    return brightness > 160 ? '#000000' : '#FFFFFF'
 }
 
 function calculatePosition(date: Date, min: Date, duration: number) {
@@ -136,6 +148,7 @@ export function ExperienceTimeline() {
                     const right = calculatePosition(to, min, duration)
                     const width = right - left
                     const isAbove = index % 2 === 0
+                    const barColor = exp.color ?? '$background'
 
                     return (
                         <Tooltip key={index} placement={isAbove ? 'top' : 'bottom'} delay={0}>
@@ -145,13 +158,21 @@ export function ExperienceTimeline() {
                                     left={`${left}%`}
                                     width={`${width}%`}
                                     height={20}
-                                    backgroundColor="$color8"
-                                    borderRadius={2}
+                                    backgroundColor={barColor}
+                                    borderRadius={10}
                                     cursor="pointer"
                                     hoverStyle={{ opacity: 0.9 }}
                                     top={isAbove ? 0 : undefined}
                                     bottom={isAbove ? undefined : 0}
-                                />
+                                    justifyContent="center"
+                                    alignItems="center"
+                                >
+                                    <DynamicIcon
+                                        name={exp.icon}
+                                        size={14}
+                                        color={getContrastingColor(barColor.startsWith('#') ? barColor : '#888888')}
+                                    />
+                                </View>
                             </Tooltip.Trigger>
 
                             <Tooltip.Content
@@ -175,7 +196,6 @@ export function ExperienceTimeline() {
                                     icon={exp.icon}
                                 />
                             </Tooltip.Content>
-
                         </Tooltip>
                     )
                 })}
