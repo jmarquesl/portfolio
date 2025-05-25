@@ -1,6 +1,7 @@
 import { Button, YStack, Text, Avatar, XStack } from "tamagui";
 import { useTranslation } from "react-i18next";
 import { Metadata } from "next";
+import { ReactTyped } from "react-typed";
 
 export async function getStaticProps() {
   return {
@@ -19,22 +20,32 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   return (
-    <YStack ai="center" w="100%" p="$4" alignItems="center" paddingTop="80px">
+    <YStack ai="center" w="100%" p="$4" alignItems="center" paddingTop="100px">
+      <XStack
+        gap="$4"
+        flexWrap="wrap"
+        alignItems="center"
+        justifyContent="center" // <- esto centra horizontalmente incluso en wrap
+      >
+        <Avatar circular size="$10" alignItems="center">
+          <Avatar.Image src="/portfolio/static/images/profile.jpg" />
+          <Avatar.Fallback backgroundColor="$backgroundFocus" />
+        </Avatar>
 
-      <YStack maxWidth="100%" p="$4">
-        <XStack gap="$4" ai="center">
-          <Avatar circular size="$10">
-            <Avatar.Image src="/portfolio/static/images/profile.jpg" />
-            <Avatar.Fallback backgroundColor="$backgroundFocus" />
-          </Avatar>
-            <YStack marginLeft="$6" maxWidth="80%" flexWrap="wrap" jc="center" alignItems="center" flexDirection="column">
-            <Text fontSize="$6" fontWeight="bold" wordWrap="break-word">
-              {t("name")}
-            </Text>
-            <Text fontSize="$6">{t("role")}</Text>
-          </YStack>
-        </XStack>
-      </YStack>
+        <YStack
+          marginLeft="$6"
+          jc="center"
+          alignItems="center"
+          flexDirection="column"
+        >
+          <Text fontSize="$6" fontWeight="bold" wordWrap="break-word" textAlign="center">
+            {t("name")}
+          </Text>
+          <Text fontSize="$6" textAlign="center">{t("role")}</Text>
+        </YStack>
+      </XStack>
+
+
 
 
       <YStack w="100%" maxWidth={700} p="$4" alignItems="center">
