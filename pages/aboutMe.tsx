@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Stack, Text, Button, XStack, YStack, Avatar } from 'tamagui';
+import { Stack, Text, Button, XStack, YStack, Avatar, useMedia } from 'tamagui';
 import ExperienceCard from '../components/ExperienceCard';
 import { Section } from '../components/Section';
 import { useTranslation } from 'react-i18next';
@@ -23,24 +23,26 @@ export const metadata: Metadata ={
 }
 
 const AboutMePage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation()
+  const media = useMedia()
+
+  const isMobile = media.sm
 
   return (
     <YStack f={1} bg="transparent" p="$4" width="100%" alignItems="center" paddingTop="80px">
-      <YStack p="$6" gap="$4" width="80%"  >
+      <YStack p="$6" gap="$4" width="80%">
         <Section title={t("about_me")}>
           <Text fontSize="$5" mt="$2" pl="$4">
-           {t("presentation")}
+            {t("presentation")}
           </Text>
         </Section>
-        {/* <ExperienceTimeline/> */}
 
         <Section title={t("experience")}>
-          <ExperienceSection/>
+          {isMobile ?  <ExperienceTimeline /> : <ExperienceSection /> }
         </Section>
 
         <Section title={t("skills")}>
-          <SkillSection/>
+          <SkillSection />
         </Section>
       </YStack>
     </YStack>
