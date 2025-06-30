@@ -10,7 +10,7 @@ const SkillSection: React.FC = () => {
     useEffect(() => {
         const loadSkills = async () => {
             const locale = i18n.language;
-            const response = await fetch(`/portfolio/data/${locale}/skills.json`);
+            const response = await fetch(`/data/${locale}/skills.json`);
             const data = await response.json();
             setSkills(data);
             setIsSkillsLoading(false);
