@@ -67,7 +67,7 @@ export function ExperienceTimeline() {
         const loadExperiences = async () => {
             try {
                 const locale = i18n.language
-                const response = await fetch(`/portfolio/data/${locale}/experiences.json`)
+                const response = await fetch(`/data/${locale}/experiences.json`)
                 const data = await response.json()
                 setExperiences(data)
             } catch (err) {
