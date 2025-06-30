@@ -7,5 +7,4 @@ module.exports = {
     NEXT_PUBLIC_I18N_NAMESPACES: '["common"]',
     NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE: "common",
   },
-  basePath: "/portfolio"
 };
