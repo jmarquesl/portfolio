@@ -27,7 +27,7 @@ export default function HomePage() {
         justifyContent="center" // <- esto centra horizontalmente incluso en wrap
       >
         <Avatar circular size="$10" alignItems="center">
-          <Avatar.Image src="F/static/images/profile.jpg" />
+          <Avatar.Image src="/static/images/profile.jpg" />
           <Avatar.Fallback backgroundColor="$backgroundFocus" />
         </Avatar>
 
