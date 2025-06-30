@@ -25,7 +25,7 @@ export default function ContactPage() {
         >
             <XStack f={1} ai="center" justifyContent="center" gap="$4" p="$6" alignItems="center" flexWrap="wrap">
                 <Avatar circular size="$20">
-                    <Avatar.Image source="/portfolio/static/images/contact.jpg" />
+                    <Avatar.Image source="/static/images/contact.jpg" />
                     <Avatar.Fallback bc="$gray7" />
                 </Avatar>
 
