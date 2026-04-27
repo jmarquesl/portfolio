@@ -421,3 +421,129 @@ html[data-theme="light"] .btn-term.primary { color: #fff; }
     transition: none;
   }
 }
+
+/* ============ FALLING ZEROS EASTER EGG ============ */
+@keyframes zeroFall {
+  from { transform: translateY(-60px); }
+  to   { transform: translateY(105vh); }
+}
+@keyframes burstParticle {
+  0%   { transform: translate(0, 0) scale(1.2); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+}
+
+.falling-zero {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--accent-2);
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  cursor: crosshair;
+  pointer-events: auto;
+  user-select: none;
+  animation: zeroFall linear infinite;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.falling-zero:hover {
+  opacity: 1 !important;
+}
+
+.zero-burst {
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.zero-burst-particle {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-shadow: 0 0 6px var(--accent-2);
+  pointer-events: none;
+  animation: burstParticle 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transform: translate(-50%, -50%);
+}
+
+.zeros-counter {
+  position: fixed;
+  left: 24px;
+  top: 72px;
+  z-index: 49;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent-2);
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.zeros-counter.is-visible {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+/* ============ ARKANOID EASTER EGG ============ */
+.arkanoid-overlay {
+  position: fixed; inset: 0; z-index: 8000;
+  background: #08060a;
+  display: flex; align-items: center; justify-content: center;
+  animation: pageReveal 0.6s ease both;
+}
+.arkanoid-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; width: 100%; max-width: 860px; padding: 0 16px;
+}
+.arkanoid-header {
+  width: 100%; max-width: 800px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.arkanoid-title {
+  font-family: var(--mono); font-size: 13px; font-weight: 700;
+  color: var(--accent-2); letter-spacing: 0.15em;
+}
+.arkanoid-back {
+  font-family: var(--mono); font-size: 11px; color: var(--fg-mute);
+  background: transparent; border: 1px solid var(--line-2);
+  padding: 4px 12px; cursor: pointer; border-radius: 2px;
+  letter-spacing: 0.06em; transition: color 0.15s, border-color 0.15s;
+}
+.arkanoid-back:hover { color: var(--fg); border-color: var(--accent-2); }
+.arkanoid-canvas-wrap { position: relative; width: 100%; max-width: 800px; }
+.arkanoid-canvas {
+  display: block; width: 100%; max-width: 800px; height: auto;
+  border: 1px solid var(--line-2);
+}
+.arkanoid-endscreen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; background: rgba(8,6,10,0.9);
+  animation: pageReveal 0.4s ease both;
+}
+.arkanoid-end-title {
+  font-family: var(--mono); font-size: 20px; font-weight: 700;
+  color: var(--accent-2); letter-spacing: 0.1em;
+}
+.arkanoid-end-title--lost { color: #ff4466; }
+.arkanoid-end-score {
+  font-family: var(--mono); font-size: 13px; color: var(--fg-dim); letter-spacing: 0.08em;
+}
+.arkanoid-end-btns { display: flex; gap: 12px; }
+.arkanoid-btn {
+  font-family: var(--mono); font-size: 12px; color: var(--fg);
+  background: transparent; border: 1px solid var(--accent-2);
+  padding: 8px 20px; cursor: pointer; border-radius: 2px;
+  letter-spacing: 0.08em; transition: background 0.15s, color 0.15s;
+}
+.arkanoid-btn:hover { background: rgba(107,30,122,0.25); color: #fff; }
+
+.term-root.game-active {
+  opacity: 0; pointer-events: none; transition: opacity 0.5s ease;
+}
