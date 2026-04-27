@@ -441,7 +441,7 @@ html[data-theme="light"] .btn-term.primary { color: #fff; }
   color: var(--accent-2);
   background: none;
   border: none;
-  padding: 4px 6px;
+  padding: 14px 16px;
   cursor: crosshair;
   pointer-events: auto;
   user-select: none;

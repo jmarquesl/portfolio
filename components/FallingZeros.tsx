@@ -35,7 +35,7 @@ function makeZero(): Zero {
   return {
     id: nextId++,
     x: 5 + Math.random() * 90,
-    speed: 8 + Math.random() * 10,
+    speed: 12 + Math.random() * 8,
     size: 14 + Math.random() * 14,
     opacity: 0.3 + Math.random() * 0.35,
     delay: -(Math.random() * 8),
