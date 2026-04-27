@@ -1,28 +1,21 @@
-import React from 'react';
-import { YStack, XStack, Text } from 'tamagui';
-import Link from 'next/link';
-import { Linkedin, Github } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const Footer = () => (
-  <YStack p="$4" ai="center" mt="$6">
-    <XStack px="$4" gap="$" mt="$3" justifyContent="space-between" width="100%">
-      <Text fontSize="$4" textAlign="left" fontWeight="bold" alignSelf="center">
-        GNU GENERAL PUBLIC LICENSE Version 3
-      </Text>
-      <XStack gap="$4">
-        <Link href="https://www.linkedin.com/in/jordi-marqu%C3%A9s-llaberia-11685145/" passHref>
-          <Text>
-            <Linkedin size={24} />
-          </Text>
-        </Link>
-        <Link href="https://github.com/jmarquesl" passHref>
-          <Text>
-            <Github size={24} />
-          </Text>
-        </Link>
-      </XStack>
-    </XStack>
-  </YStack>
-);
+export default function Footer() {
+  const { t } = useTranslation();
 
-export default Footer;
+  return (
+    <footer className="term-footer">
+      <div className="term-footer-left">
+        <span className="term-prompt">$</span>
+        <span>exit 0</span>
+        <span className="term-cursor-blink">_</span>
+      </div>
+      <div className="term-footer-mid">
+        © 2026 Jordi Marques Llaberia · GNU GPL v3
+      </div>
+      <div className="term-footer-right">
+        v2.0.0 · {t('footer_built')}
+      </div>
+    </footer>
+  );
+}

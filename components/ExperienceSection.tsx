@@ -1,53 +1,46 @@
-import { YStack, Text } from "tamagui";
-import ExperienceCard from "./ExperienceCard";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { IconName } from "lucide-react/dynamic";
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { ExperienceData, Lang } from '../lib/types';
+import { SectionHeader } from './AboutSection';
+import ExperienceEntryComponent from './ExperienceEntry';
 
-const ExperienceSection = () => {
-    const { t, i18n } = useTranslation();
-    interface Experience {
-        title: string;
-        company: string;
-        dates: string;
-        description: string;
-        logo: string;
-        skills: string[];
-        icon: IconName;
-        color?: string;
-    }
-
-    const [experiences, setExperiences] = useState<Experience[]>([]);
-    const [isExperiencesLoading, setIsExperiencesLoading] = useState(true);
-
-    useEffect(() => {
-        const loadExperiences = async () => {
-            const locale = i18n.language;
-            const response = await fetch(`/data/${locale}/experiences.json`);
-            const data = await response.json();
-            setExperiences(data);
-            setIsExperiencesLoading(false);
-        };
-        loadExperiences();
-    }, [i18n.language]);
-
-    return (
-        <YStack>
-            {isExperiencesLoading ? <></> : (experiences.map((exp) => (
-                <ExperienceCard
-                    key={exp.title}
-                    title={exp.title}
-                    company={exp.company}
-                    dates={exp.dates}
-                    description={exp.description}
-                    logo={exp.logo}
-                    skills={exp.skills}
-                    icon={exp.icon}
-                    color={exp.color}
-                />
-            )))}
-        </YStack>
-    );
+function SubSectionHeader({ label }: { label: string }) {
+  return (
+    <div className="exp-subsection-head">
+      <span className="exp-subsection-label">// {label}</span>
+      <span className="exp-subsection-rule" />
+    </div>
+  );
 }
 
-export default ExperienceSection;
+export default function ExperienceSection() {
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language.startsWith('es') ? 'es' : 'en';
+  const [data, setData] = useState<ExperienceData>({ current: [], past: [] });
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/data/${lang}/experiences.json`)
+      .then((r) => r.json())
+      .then((d: ExperienceData) => setData(d));
+  }, [lang]);
+
+  return (
+    <section id="experience" className="term-section">
+      <SectionHeader num="02" label={t('experience')} />
+
+      <SubSectionHeader label={t('current_experience')} />
+      <div className="exp-list exp-list--current">
+        {data.current.map((e) => (
+          <ExperienceEntryComponent key={`${e.company}-${e.start_date}`} entry={e} />
+        ))}
+      </div>
+
+      <SubSectionHeader label={t('past_experience')} />
+      <div className="exp-list">
+        {data.past.map((e) => (
+          <ExperienceEntryComponent key={`${e.company}-${e.start_date}`} entry={e} />
+        ))}
+      </div>
+    </section>
+  );
+}

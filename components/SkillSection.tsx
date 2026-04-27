@@ -1,32 +1,47 @@
-import { useEffect, useState } from "react";
-import SkillCard from "./SkillsCard";
-import { YStack } from "tamagui";
-import { useTranslation } from "next-i18next-static-site";
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { SkillGroup, Lang } from '../lib/types';
+import { AREA_ICONS } from '../lib/siteData';
+import SkillIcon from './SkillIcon';
+import { SectionHeader } from './AboutSection';
 
-const SkillSection: React.FC = () => {
-    const [skills, setSkills] = useState([]);
-    const [isSkillsLoading, setIsSkillsLoading] = useState(true);
-    const { i18n } = useTranslation();
-    useEffect(() => {
-        const loadSkills = async () => {
-            const locale = i18n.language;
-            const response = await fetch(`/data/${locale}/skills.json`);
-            const data = await response.json();
-            setSkills(data);
-            setIsSkillsLoading(false);
-        };
-        loadSkills();
-    }, [i18n.language]);
-    return (
-        <YStack>
-            {isSkillsLoading ? <></> : (skills.map((skill: any) => (
-                <SkillCard
-                    area={skill.area}
-                    skills={skill.skills} />
-            )))
-            }
-        </YStack>
-    )
+export default function SkillSection() {
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language.startsWith('es') ? 'es' : 'en';
+  const [skills, setSkills] = useState<SkillGroup[]>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/data/${lang}/skills.json`)
+      .then((r) => r.json())
+      .then((data: SkillGroup[]) => setSkills(data));
+  }, [lang]);
+
+  return (
+    <section id="skills" className="term-section">
+      <SectionHeader num="03" label={t('skills')} />
+      <div className="skills-grid skills-list">
+        {skills.map((group) => {
+          const icons = AREA_ICONS[group.area.toLowerCase()] ?? [];
+          return (
+            <div key={group.area} className="skill-group">
+              <div className="skill-group-head">
+                <span className="skill-bracket">[</span>
+                <span>{group.area}</span>
+                <span className="skill-bracket">]</span>
+                <span className="skill-count">{String(group.skills.length).padStart(2, '0')}</span>
+              </div>
+              <ul className="skill-list">
+                {group.skills.map((skill, i) => (
+                  <li key={`${group.area}-${skill}`} className="skill-item">
+                    <span className="skill-marker"><SkillIcon name={icons[i] ?? 'puzzle'} /></span>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
 }
-
-export default SkillSection;
