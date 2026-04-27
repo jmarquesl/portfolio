@@ -12,6 +12,7 @@ const SECTIONS = [
 export default function Header() {
   const { i18n, t } = useTranslation();
   const [active, setActive] = useState('hero');
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const activeRef = useRef(active);
   const lang = i18n.language.startsWith('es') ? 'es' : 'en';
 
@@ -60,12 +61,27 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') as 'dark' | 'light' | null;
+    if (saved) {
+      setTheme(saved);
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  }, []);
+
   const go = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const switchLanguage = (nextLang: 'en' | 'es') => {
     void i18n.changeLanguage(nextLang);
+  };
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem('theme', next);
+    document.documentElement.setAttribute('data-theme', next);
   };
 
   return (
@@ -89,10 +105,30 @@ export default function Header() {
           </li>
         ))}
       </ul>
-      <div className="term-nav-lang">
-        <button className={lang === 'en' ? 'is-active' : ''} onClick={() => switchLanguage('en')}>EN</button>
-        <span>/</span>
-        <button className={lang === 'es' ? 'is-active' : ''} onClick={() => switchLanguage('es')}>ES</button>
+      <div className="nav-controls">
+        <div className="nav-toggle-group">
+          <button
+            className={`nav-toggle-btn${lang === 'en' ? ' is-active' : ''}`}
+            onClick={() => switchLanguage('en')}
+            aria-label="Switch to English"
+          >EN</button>
+          <button
+            className={`nav-toggle-btn${lang === 'es' ? ' is-active' : ''}`}
+            onClick={() => switchLanguage('es')}
+            aria-label="Switch to Spanish"
+          >ES</button>
+        </div>
+        <div className="nav-controls-sep" />
+        <button
+          className={`nav-theme-btn${theme === 'light' ? ' is-light' : ''}`}
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          <span className="nav-theme-icon" aria-hidden="true">
+            {theme === 'dark' ? '◑' : '◐'}
+          </span>
+          <span className="nav-theme-label">{theme}</span>
+        </button>
       </div>
     </nav>
   );

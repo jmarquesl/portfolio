@@ -6,12 +6,12 @@ html, body { margin: 0; padding: 0; background: #08060a; color: #d4ccdc; font-fa
 .term-root {
   --bg: #08060a; --bg-2: #0f0a13; --bg-3: #160e1c;
   --line: #1f1525; --line-2: #2c1f37;
-  --fg: #d4ccdc; --fg-dim: #8a7e9a; --fg-mute: #564b66;
+  --fg: #d4ccdc; --fg-dim: #a89abc; --fg-mute: #7c7090;
   --accent: #35063e; --accent-2: #6b1e7a; --accent-dim: #260530;
   --accent-glow: rgba(53, 6, 62, 0.6);
   --mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
   position: relative; min-height: 100vh; background: var(--bg); color: var(--fg);
-  font-family: var(--mono); font-size: 14px; line-height: 1.65; overflow-x: hidden; letter-spacing: 0.01em;
+  font-family: var(--mono); font-size: 14px; line-height: 1.65; overflow-x: clip; letter-spacing: 0.01em;
 }
 
 /* ============ CHROME ============ */
@@ -54,9 +54,45 @@ html, body { margin: 0; padding: 0; background: #08060a; color: #d4ccdc; font-fa
 .term-nav-item.is-active { color: var(--accent-2); border-color: var(--accent-2); background: rgba(53,6,62,0.5); }
 .term-nav-num { font-weight: 700; opacity: 0.7; }
 .term-nav-line { width: 16px; height: 1px; background: currentColor; opacity: 0.4; }
-.term-nav-lang { display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--fg-mute); }
-.term-nav-lang button { background: transparent; border: none; color: var(--fg-dim); font-family: var(--mono); font-size: 11px; cursor: pointer; padding: 2px 4px; }
-.term-nav-lang button.is-active { color: var(--accent-2); font-weight: 700; }
+/* ============ NAV CONTROLS ============ */
+.nav-controls {
+  display: flex; align-items: center; gap: 2px;
+  padding: 3px; background: var(--bg-3);
+  border: 1px solid var(--line-2); border-radius: 3px;
+}
+.nav-toggle-group { display: flex; gap: 1px; }
+.nav-toggle-btn {
+  padding: 4px 10px; font-family: var(--mono); font-size: 10px;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: transparent; border: none; color: var(--fg-mute);
+  cursor: pointer; border-radius: 2px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  line-height: 1;
+}
+.nav-toggle-btn:hover:not(.is-active) {
+  color: var(--fg-dim); background: rgba(107,30,122,0.1);
+}
+.nav-toggle-btn.is-active {
+  background: var(--accent-2); color: #fff;
+  box-shadow: 0 0 10px rgba(107,30,122,0.45);
+}
+.nav-controls-sep {
+  width: 1px; height: 16px; background: var(--line-2);
+  margin: 0 3px; flex-shrink: 0;
+}
+.nav-theme-btn {
+  display: flex; align-items: center; gap: 5px;
+  padding: 4px 10px; font-family: var(--mono); font-size: 10px;
+  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  background: transparent; border: none; color: var(--fg-mute);
+  cursor: pointer; border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+.nav-theme-btn:hover { color: var(--fg-dim); background: rgba(107,30,122,0.1); }
+.nav-theme-btn.is-light { color: var(--accent-2); }
+.nav-theme-icon { font-size: 12px; line-height: 1; }
+.nav-theme-label { font-size: 10px; letter-spacing: 0.1em; }
 
 /* ============ MAIN ============ */
 .term-main { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 104px 48px 48px; }
@@ -69,12 +105,27 @@ html, body { margin: 0; padding: 0; background: #08060a; color: #d4ccdc; font-fa
   transition:
     opacity 0.65s ease,
     transform 0.65s cubic-bezier(0.18, 0.82, 0.22, 1);
-  will-change: opacity, transform;
+  pointer-events: none;
 }
 .reveal-section.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  pointer-events: auto;
   animation: revealGlow 0.85s ease both;
+}
+
+/* ============ BOOT REVEAL ============ */
+@keyframes pageReveal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.term-root:not(.is-booted) {
+  opacity: 0;
+}
+
+.term-root.is-booted {
+  animation: pageReveal 0.75s cubic-bezier(0.18, 0.82, 0.22, 1) both;
 }
 
 /* ============ SECTION HEADER ============ */
@@ -296,6 +347,61 @@ html, body { margin: 0; padding: 0; background: #08060a; color: #d4ccdc; font-fa
   35% { filter: brightness(1.22); }
   100% { filter: brightness(1); }
 }
+
+/* ============ BOOT SCREEN ============ */
+.boot-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #08060a;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 1; transition: opacity 0.65s ease;
+}
+.boot-screen--fade { opacity: 0; pointer-events: none; }
+.boot-screen-inner { width: min(600px, 88vw); font-family: "JetBrains Mono", ui-monospace, monospace; }
+.boot-screen-logo {
+  color: #6b1e7a; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+  margin-bottom: 40px; padding-bottom: 12px; border-bottom: 1px solid #1f1525;
+}
+.boot-logo-prompt { color: #9b30ac; }
+.boot-screen-log { min-height: 220px; margin-bottom: 32px; display: flex; flex-direction: column; gap: 2px; }
+.boot-screen-line { font-size: 12px; color: #7c7090; line-height: 1.9; }
+.boot-screen-line--last { color: #d4ccdc; }
+.boot-screen-cursor { color: #6b1e7a; animation: blink 1s steps(2) infinite; font-size: 14px; }
+.boot-progress-wrap {
+  height: 1px; background: #1f1525; margin-bottom: 8px; overflow: hidden;
+}
+.boot-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #35063e, #6b1e7a, #9b30ac);
+  transition: width 0.18s ease;
+}
+.boot-progress-label {
+  font-size: 10px; color: #564b66; text-align: right; letter-spacing: 0.1em;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ============ LIGHT MODE ============ */
+html[data-theme="light"] body {
+  background: #f0edf4;
+  color: #1a0a22;
+}
+html[data-theme="light"] .term-root {
+  --bg: #f0edf4; --bg-2: #e8e3ef; --bg-3: #ddd7e8;
+  --line: #c8bfd8; --line-2: #b8aed0;
+  --fg: #1a0a22; --fg-dim: #4a3860; --fg-mute: #7a6a8a;
+  --accent: #6b1e7a; --accent-2: #9b30ac; --accent-dim: #e8d0f0;
+  --accent-glow: rgba(107, 30, 122, 0.2);
+  background: var(--bg); color: var(--fg);
+}
+html[data-theme="light"] .term-nav {
+  background: rgba(240, 237, 244, 0.97);
+  border-color: var(--line);
+}
+html[data-theme="light"] .term-scanlines { opacity: 0.15; }
+html[data-theme="light"] .term-vignette { opacity: 0.3; }
+html[data-theme="light"] .hero-boot-card {
+  background: linear-gradient(180deg, rgba(107,30,122,0.06), transparent 40%), var(--bg-2);
+}
+html[data-theme="light"] .btn-term.primary { color: #fff; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
