@@ -1,24 +1,21 @@
 {
   "dependencies": {
-    "tamagui": "^1.126.13",
-    "@tamagui/animations-css": "^1.126.13",
-    "@tamagui/config": "^1.126.13",
-    "@tamagui/core": "^1.126.13",
-    "@tamagui/themes": "^1.126.13",
-    "@tamagui/web": "^1.126.13",
-    "i18next": "^24.2.2",
+    "i18next": "^26.0.8",
     "lucide-react": "^0.475.0",
-    "next": "^15.1.7",
+    "next": "^15.5.15",
     "next-i18next-static-site": "^1.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.4.0",
-    "react-native-web": "^0.19.13"
+    "react-i18next": "^15.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.8",
     "typescript": "^5.7.3"
+  },
+  "resolutions": {
+    "@babel/runtime": "^7.27.1",
+    "postcss": "^8.5.10"
   },
   "scripts": {
     "dev": "next dev",
