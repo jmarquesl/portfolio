@@ -6,6 +6,6 @@ module.exports = {
     NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE: "en",
     NEXT_PUBLIC_I18N_NAMESPACES: '["common"]',
     NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE: "common",
-    NEXT_PUBLIC_BASE_PATH: "/portfolio",
+    NEXT_PUBLIC_BASE_PATH: "",
   },
 };
